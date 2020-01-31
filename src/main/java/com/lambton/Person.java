@@ -16,15 +16,17 @@ enum Gender {
     Other
 }
 
-abstract class Person {
-    int personId;
+public abstract class Person {
+    int id;
     String firstName;
     String lastName;
-    Date birthDate;
     Gender gender;
-    String email;
-    String address;
-    String contactNumber;
+    Date birthDate;
+    int age;
+    String mobileNumber;
+    String emailId;
+    String userName;
+    char[] password;
     static String[] months = new String[]{"null",
             "January",
             "February",
@@ -39,33 +41,107 @@ abstract class Person {
             "November",
             "December"};
 
-    public void setData(int personId,
-                        String firstName,
-                        String lastName,
-                        Date birthDate,
-                        Gender gender,
-                        String email,
-                        String address,
-                        String contactNumber) {
-        this.personId = personId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.gender = gender;
-        this.email = email;
-        this.address = address;
-        this.contactNumber = contactNumber;
-
+    public int getId() {
+        return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+/*    public void setGender(Gender gender) {
+        this.gender = gender;
+    }*/
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+/*    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }*/
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public char[] getPassword() {
+        return password;
+    }
+
+    public void setPassword(char[] password) {
+        this.password = password;
+    }
     private int getAge() {
-        int age;
         LocalDate today = LocalDate.now();
-        age = today.getYear() - birthDate.getYear();
+        this.age = today.getYear() - birthDate.getYear();
         return age;
     }
 
-    public void printData() {
+        public void setData(int id,
+                        String firstName,
+                        String lastName,
+                        Gender gender,
+                        Date birthDate,
+                        String mobileNumber,
+                        String emailId,
+                        String userName,
+                        char[] password
+                        ) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.birthDate = birthDate;
+            this.mobileNumber = mobileNumber;
+        this.emailId = emailId;
+        this.userName = userName;
+        this.password=password;
+
+    }
+
+
+  /*  public void printData() {
         System.out.println("First Name: " + firstName);
         System.out.println("Last Name: " + lastName);
         System.out.println("Full Name: " + firstName.concat(" " + lastName));
@@ -75,7 +151,7 @@ abstract class Person {
         System.out.println("Address: " + address);
         System.out.println("Contact Number: " + contactNumber);
         System.out.println("Age: " + getAge() + " years");
-    }
+    }*/
 
     public abstract void finalExecution();
 
