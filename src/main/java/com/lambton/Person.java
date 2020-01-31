@@ -1,6 +1,7 @@
 package com.lambton;
 
 
+import java.time.LocalDate;
 import java.util.Date;
 
 enum prefix {
@@ -55,6 +56,13 @@ abstract class Person {
         this.address = address;
         this.contactNumber = contactNumber;
 
+    }
+
+    private int getAge() {
+        int age;
+        LocalDate today = LocalDate.now();
+        age = today.getYear() - birthDate.getYear();
+        return age;
     }
 
 }
