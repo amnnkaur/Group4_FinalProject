@@ -38,4 +38,23 @@ abstract class Person {
             "November",
             "December"};
 
+    public void setData(int personId,
+                        String firstName,
+                        String lastName,
+                        Date birthDate,
+                        Gender gender,
+                        String email,
+                        String address,
+                        String contactNumber) {
+        this.personId = personId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.gender = gender;
+        this.email = email;
+        this.address = address;
+        this.contactNumber = contactNumber;
+
+    }
+
 }
