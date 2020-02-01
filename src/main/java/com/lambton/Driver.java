@@ -15,6 +15,7 @@ public class Driver extends Person {
         this.isDrivingHistoryCleared = isDrivingHistoryCleared;
         this.salary = salary;
     }
+
     public long getLicenceNumber() {
         return licenceNumber;
     }
@@ -22,6 +23,7 @@ public class Driver extends Person {
     public void setLicenceNumber(long licenceNumber) {
         this.licenceNumber = licenceNumber;
     }
+
     public String isDrivingHistoryCleared() {
         String status;
         if (isDrivingHistoryCleared == true) {
@@ -31,6 +33,7 @@ public class Driver extends Person {
         }
         return status;
     }
+
     public void setDrivingHistoryCleared(boolean drivingHistoryCleared) {
         isDrivingHistoryCleared = drivingHistoryCleared;
     }
@@ -42,6 +45,7 @@ public class Driver extends Person {
     public void setSalary(Double salary) {
         this.salary = salary;
     }
+
     @Override
     public void printData() {
         System.out.println("Id: " + prefixPlacing());

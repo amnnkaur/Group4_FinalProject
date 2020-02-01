@@ -37,7 +37,7 @@ public abstract class Vehicle {
     int ratePerKm;
 
     public Vehicle(long vehicleIdentificationNumber, String vehicleDescription, String manufacturerName, boolean isSelfDrive,
-            /*String driver,*/ boolean isInsured, /*String insuranceNameProvider,*/
+                   /*String driver,*/ boolean isInsured, /*String insuranceNameProvider,*/
                    int noOfSeat, Fuel fuelType/*, Type vehicleType, int baseRate, int ratePerKm*/) {
         this.vehicleIdentificationNumber = vehicleIdentificationNumber;
         this.vehicleDescription = vehicleDescription;
@@ -49,18 +49,18 @@ public abstract class Vehicle {
             String driver=inputDriver.nextLine();
             this.Driver = driver;
         }
-        else{
-            this.Driver=null;
+       else{
+           this.Driver=null;
         }
         this.isInsured = isInsured;
-        if(isInsured==true){
-            System.out.println("Input Insurance Name Provider: ");
-            Scanner inputInsuranceProvider= new Scanner(System.in);
-            String insuranceNameProvider=inputInsuranceProvider.nextLine();
-            this.insuranceNameProvider = insuranceNameProvider;
-        }else{
-            this.insuranceNameProvider=null;
-        }
+       if(isInsured==true){
+           System.out.println("Input Insurance Name Provider: ");
+           Scanner inputInsuranceProvider= new Scanner(System.in);
+           String insuranceNameProvider=inputInsuranceProvider.nextLine();
+           this.insuranceNameProvider = insuranceNameProvider;
+       }else{
+           this.insuranceNameProvider=null;
+       }
 
         this.noOfSeat = noOfSeat;
         this.fuelType = fuelType;

@@ -3,6 +3,7 @@ package com.lambton;
 import java.util.Date;
 
 public class Owner extends Person {
+
     String companyTitle;
     String officeNumber;
     String website;
@@ -16,6 +17,7 @@ public class Owner extends Person {
         this.officeNumber = officeNumber;
         this.website = website;
     }
+
     public String[] getVehicleListOwned() {
         int i = 0;
         for (i = 0; i < vehicleListOwned.length; i++) {
@@ -23,6 +25,7 @@ public class Owner extends Person {
         }
         return vehicleListOwned;
     }
+
     public void setVehicleListOwned(String[] vehicleListOwned) {
         this.vehicleListOwned = vehicleListOwned;
     }
@@ -50,6 +53,7 @@ public class Owner extends Person {
     public void setWebsite(String website) {
         this.website = website;
     }
+
     public String prefixPlacing() {
         str = new String(String.valueOf(prefix.OWN) + "_");
         str = str.concat(String.valueOf(id));
@@ -66,5 +70,4 @@ public class Owner extends Person {
         getVehicleListOwned();
         System.out.println();
     }
-
 }
