@@ -50,5 +50,21 @@ public class Owner extends Person {
     public void setWebsite(String website) {
         this.website = website;
     }
+    public String prefixPlacing() {
+        str = new String(String.valueOf(prefix.OWN) + "_");
+        str = str.concat(String.valueOf(id));
+        return str;
+    }
+
+    @Override
+    public void printData() {
+        System.out.println("Id: " + prefixPlacing());
+        super.printData();
+        System.out.println("Company Title: " + getCompanyTitle());
+        System.out.println("Business Landline Number: " + getOfficeNumber());
+        System.out.println("Website: " + getWebsite());
+        getVehicleListOwned();
+        System.out.println();
+    }
 
 }
