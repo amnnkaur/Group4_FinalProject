@@ -139,4 +139,43 @@ public abstract class Vehicle {
     public void setFuelType(Fuel fuelType) {
         this.fuelType = fuelType;
     }
+
+    public int getBaseRate() {
+        switch (vehicleType) {
+            case Car:
+                baseRate = 100;
+                break;
+            case Motorcycle:
+                baseRate = 50;
+                break;
+            case Bus:
+                baseRate = 250;
+                break;
+            default:
+                baseRate = 0;
+        }
+        return baseRate;
+    }
+
+/*    public void setBaseRate(int baseRate) {
+        this.baseRate = baseRate;
+    }*/
+
+    public int getRatePerKm() {
+        switch (vehicleType) {
+            case Car:
+                ratePerKm = 5;
+                break;
+            case Motorcycle:
+                ratePerKm = 1;
+                break;
+            case Bus:
+                ratePerKm = 7;
+                break;
+            default:
+                ratePerKm = 0;
+                break;
+        }
+        return ratePerKm;
+    }
 }
