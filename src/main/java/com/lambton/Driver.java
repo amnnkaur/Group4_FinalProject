@@ -42,4 +42,21 @@ public class Driver extends Person {
     public void setSalary(Double salary) {
         this.salary = salary;
     }
+    @Override
+    public void printData() {
+        System.out.println("Id: " + prefixPlacing());
+        super.printData();
+        System.out.println("Licence Number: " + getLicenceNumber());
+        System.out.println("Driving History: " + isDrivingHistoryCleared());
+        System.out.println("Salary: " + getSalary());
+        System.out.println();
+
+    }
+
+
+    public String prefixPlacing() {
+        str = new String(String.valueOf(prefix.DRI) + "_");
+        str = str.concat(String.valueOf(id));
+        return str;
+    }
 }
