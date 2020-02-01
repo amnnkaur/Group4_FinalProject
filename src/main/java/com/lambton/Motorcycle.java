@@ -38,4 +38,12 @@ public class Motorcycle extends Vehicle {
         str = str.concat(String.valueOf(vehicleIdentificationNumber));
         return str;
     }
+    @Override
+    public void printData() {
+        System.out.println("Vehicle Identification Number: "+ prefixer());
+        super.printData();
+        System.out.println("Top Speed: "+getTopSpeed());
+        System.out.println("Mileage: "+getMilage());
+        System.out.println();
+    }
 }
