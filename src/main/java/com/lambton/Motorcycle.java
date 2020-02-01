@@ -16,4 +16,20 @@ public class Motorcycle extends Vehicle {
         this.milage = milage;
 
     }
+
+}    public double getTopSpeed() {
+    return topSpeed;
 }
+
+    public void setTopSpeed(float topSpeed) {
+        this.topSpeed = topSpeed;
+    }
+
+    public double getMilage() {
+        return milage;
+    }
+
+    public void setMilage(float milage) {
+        this.milage = milage;
+    }
+
