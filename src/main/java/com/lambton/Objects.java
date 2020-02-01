@@ -27,16 +27,22 @@ public class Objects {
         o1.setVehicleListOwned(ref);
         o1.printData();
 
-        Car car1 = new Car(15498, "New Car", "Ford",
+        Car car1 = new Car(1, "New Car", "Ford",
+                true, false, 4, Fuel.Electric, CarType.Sedan, "Blue");
+        Car car2 = new Car(2, "New Car",
+                "Ruther_Ford",
                 true, false, 4, Fuel.Electric, CarType.Sedan, "Blue");
         car1.printData();
-        Motorcycle m1= new Motorcycle(1548974,"Hashtag",
+        car2.printData();
+        Motorcycle m1= new Motorcycle(3,"Hashtag",
                 "Harley",true,false,2,Fuel.Petrol,
                 56.50d,15.10d);
         m1.printData();
-        Bus b1=new Bus(154157,"Here only",
+        Bus b1=new Bus(4,"Here only",
                 "Volvo",true,false,7,Fuel.Electric,
                 BusType.MiniCoach,true,true);
         b1.printData();
+
+        System.out.println("Vehicle List: "+Vehicle.getVehicleList());
     }
 }

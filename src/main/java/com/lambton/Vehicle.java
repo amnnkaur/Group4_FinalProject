@@ -1,10 +1,10 @@
 package com.lambton;
 
-import javax.xml.soap.Text;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
-enum prefixers{
+enum prefixers {
     CAR,
     MOT,
     BUS
@@ -24,6 +24,9 @@ enum Type {
 
 public abstract class Vehicle {
     String str;
+    /*   static String key;
+       static String value;
+       static String hashMap;*/
     long vehicleIdentificationNumber;
     String vehicleDescription;
     String manufacturerName;
@@ -36,40 +39,60 @@ public abstract class Vehicle {
     Type vehicleType;
     int baseRate;
     int ratePerKm;
-    HashMap<String,String>vehicleList=new HashMap<>();
+    static HashMap<String, String> vehicleList = new HashMap<>();
 
     public Vehicle(long vehicleIdentificationNumber,
                    String vehicleDescription,
                    String manufacturerName,
                    boolean isSelfDrive,
-                    boolean isInsured,
+                   boolean isInsured,
                    int noOfSeat, Fuel fuelType) {
         this.vehicleIdentificationNumber = vehicleIdentificationNumber;
         this.vehicleDescription = vehicleDescription;
+        this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
+                manufacturerName);
         this.manufacturerName = manufacturerName;
         this.isSelfDrive = isSelfDrive;
-        if(isSelfDrive==false){
+        if (isSelfDrive == false) {
             System.out.println("Enter Driver's Name: ");
-            Scanner inputDriver=new Scanner(System.in);
-            String driver=inputDriver.nextLine();
+            Scanner inputDriver = new Scanner(System.in);
+            String driver = inputDriver.nextLine();
             this.Driver = driver;
-        }
-       else{
-           this.Driver=null;
+        } else {
+            this.Driver = null;
         }
         this.isInsured = isInsured;
-       if(isInsured==true){
-           System.out.println("Input Insurance Name Provider: ");
-           Scanner inputInsuranceProvider= new Scanner(System.in);
-           String insuranceNameProvider=inputInsuranceProvider.nextLine();
-           this.insuranceNameProvider = insuranceNameProvider;
-       }else{
-           this.insuranceNameProvider=null;
-       }
+        if (isInsured == true) {
+            System.out.println("Input Insurance Name Provider: ");
+            Scanner inputInsuranceProvider = new Scanner(System.in);
+            String insuranceNameProvider = inputInsuranceProvider.nextLine();
+            this.insuranceNameProvider = insuranceNameProvider;
+        } else {
+            this.insuranceNameProvider = null;
+        }
 
         this.noOfSeat = noOfSeat;
         this.fuelType = fuelType;
 
+    }
+
+    public static HashMap<String, String> getVehicleList() {
+        return vehicleList;
+    }
+
+    /*   public static String getVehicleList() {
+        for(Map.Entry<String,String>entry:vehicleList.entrySet()) {
+            key=entry.getKey();
+            value=entry.getValue();
+            hashMap=key+" - "+value;
+           *//* System.out.println(entry.getKey() + " - " + entry.getValue());*//*
+        }
+        return hashMap;
+    }*/
+
+    public void setVehicleList(HashMap<String, String> vehicleList) {
+        this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
+                manufacturerName);
     }
 
     public Type getVehicleType() {
@@ -192,9 +215,29 @@ public abstract class Vehicle {
         return ratePerKm;
     }
 
-/*    public void setRatePerKm(int ratePerKm) {
-        this.ratePerKm = ratePerKm;
-    }*/
+    public String prefixer() {
+        switch (vehicleType) {
+            case Car: {
+                str = new String(String.valueOf(prefixers.CAR) + "_");
+                str = str.concat(String.valueOf(vehicleIdentificationNumber));
+                break;
+            }
+            case Motorcycle: {
+                str = new String(String.valueOf(prefixers.MOT) + "_");
+                str = str.concat(String.valueOf(vehicleIdentificationNumber));
+                break;
+            }
+            case Bus: {
+                str = new String(String.valueOf(prefixers.BUS) + "_");
+                str = str.concat(String.valueOf(vehicleIdentificationNumber));
+                break;
+            }
+            default:
+                str = null;
+                break;
+        }
+        return str;
+    }
 
     public void printData() {
 //        System.out.println("VIN: " + getVehicleIdentificationNumber());
@@ -204,10 +247,11 @@ public abstract class Vehicle {
         System.out.println("Driver: " + getDriver());
         System.out.println("Insurance: " + isInsured());
         System.out.println("Insurance Name Provider: " + getInsuranceNameProvider());
-        System.out.println("No of Seats: " + getNoOfSeat());
+        System.out.println("No of Seats: " + getNoOfSeat() + " seats");
         System.out.println("Fuel Type: " + getFuelType());
-        System.out.println("Base Rate: " +"$"+getBaseRate());
-        System.out.println("Rate per km: " +"$"+getRatePerKm());
+        System.out.println("Base Rate: " + "$" + getBaseRate());
+        System.out.println("Rate per km: " + "$" + getRatePerKm());
+//        System.out.println("Vehicle List: "+getVehicleList());
     }
 
 
