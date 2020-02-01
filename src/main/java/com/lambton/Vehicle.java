@@ -178,4 +178,17 @@ public abstract class Vehicle {
         }
         return ratePerKm;
     }
+    public void printData() {
+//        System.out.println("VIN: " + getVehicleIdentificationNumber());
+        System.out.println("Vehicle Description: " + getVehicleDescription());
+        System.out.println("Manufacturer Name: " + getManufacturerName());
+        System.out.println("Self Drive: " + isSelfDrive());
+        System.out.println("Driver: " + getDriver());
+        System.out.println("Insurance: " + isInsured());
+        System.out.println("Insurance Name Provider: " + getInsuranceNameProvider());
+        System.out.println("No of Seats: " + getNoOfSeat());
+        System.out.println("Fuel Type: " + getFuelType());
+        System.out.println("Base Rate: " +"$"+getBaseRate());
+        System.out.println("Rate per km: " +"$"+getRatePerKm());
+    }
 }
