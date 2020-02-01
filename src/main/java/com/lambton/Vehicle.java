@@ -50,7 +50,9 @@ public abstract class Vehicle {
         this.vehicleIdentificationNumber = vehicleIdentificationNumber;
         this.vehicleDescription = vehicleDescription;
         this.manufacturerName = manufacturerName;
+
         this.isSelfDrive = isSelfDrive;
+
         if (isSelfDrive == false) {
             System.out.println("Enter Driver's Name: ");
             Scanner inputDriver = new Scanner(System.in);
@@ -59,7 +61,9 @@ public abstract class Vehicle {
         } else {
             this.Driver = null;
         }
+
         this.isInsured = isInsured;
+
         if (isInsured == true) {
             System.out.println("Input Insurance Name Provider: ");
             Scanner inputInsuranceProvider = new Scanner(System.in);
@@ -68,20 +72,24 @@ public abstract class Vehicle {
         } else {
             this.insuranceNameProvider = null;
         }
+
         this.noOfSeat = noOfSeat;
         this.fuelType = fuelType;
+
         this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
                 manufacturerName);
     }
 
-/*        public void setVehicleList(HashMap<String, String> vehicleList) {
-           vehicleList= this.vehicleList.put(prefixer(),
-                    manufacturerName);
-        }*/
+    public  void setVehicleList(HashMap<String, String> vehicleList) {
+//        prefixer();
+//        this.vehicleList.put(prefixer(),manufacturerName);
+    }
+
     public static HashMap<String, String> getVehicleList() {
         System.out.println("VehicleList: ");
-        for(Map.Entry<String,String>entry:vehicleList.entrySet()){
-            System.out.println(entry.getKey()+" - "+entry.getValue());}
+        for (Map.Entry<String, String> entry : vehicleList.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
         return null;
     }
 
@@ -237,7 +245,7 @@ public abstract class Vehicle {
     }
 
     public void printData() {
-        System.out.println("Vehicle Identification Number: "+ prefixer());
+        System.out.println("Vehicle Identification Number: " + prefixer());
         System.out.println("Vehicle Description: " + getVehicleDescription());
         System.out.println("Manufacturer Name: " + getManufacturerName());
         System.out.println("Self Drive: " + isSelfDrive());
