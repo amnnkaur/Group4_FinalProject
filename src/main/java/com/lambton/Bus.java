@@ -55,14 +55,13 @@ public class Bus extends Vehicle {
     }
 
 
-
     @Override
     public void printData() {
-        System.out.println("Vehicle Identification Number: " + prefixer());
         super.printData();
         System.out.println("Bus Type: " + getTypeOfBus());
         System.out.println("Accessibility Service Avavilable: " + isAccessibilityServiceAvailable());
         System.out.println("Wifi Available: " + isWifiAvailable());
+        System.out.println();
     }
 
 }

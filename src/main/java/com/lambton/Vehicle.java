@@ -49,8 +49,6 @@ public abstract class Vehicle {
                    int noOfSeat, Fuel fuelType) {
         this.vehicleIdentificationNumber = vehicleIdentificationNumber;
         this.vehicleDescription = vehicleDescription;
-        this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
-                manufacturerName);
         this.manufacturerName = manufacturerName;
         this.isSelfDrive = isSelfDrive;
         if (isSelfDrive == false) {
@@ -70,14 +68,21 @@ public abstract class Vehicle {
         } else {
             this.insuranceNameProvider = null;
         }
-
         this.noOfSeat = noOfSeat;
         this.fuelType = fuelType;
-
+        this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
+                manufacturerName);
     }
 
+/*        public void setVehicleList(HashMap<String, String> vehicleList) {
+           vehicleList= this.vehicleList.put(prefixer(),
+                    manufacturerName);
+        }*/
     public static HashMap<String, String> getVehicleList() {
-        return vehicleList;
+        System.out.println("VehicleList: ");
+        for(Map.Entry<String,String>entry:vehicleList.entrySet()){
+            System.out.println(entry.getKey()+" - "+entry.getValue());}
+        return null;
     }
 
     /*   public static String getVehicleList() {
@@ -90,17 +95,9 @@ public abstract class Vehicle {
         return hashMap;
     }*/
 
-    public void setVehicleList(HashMap<String, String> vehicleList) {
-        this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
-                manufacturerName);
-    }
 
     public Type getVehicleType() {
         return vehicleType;
-    }
-
-    public void setVehicleType(Type vehicleType) {
-        this.vehicleType = vehicleType;
     }
 
     public long getVehicleIdentificationNumber() {
@@ -240,7 +237,7 @@ public abstract class Vehicle {
     }
 
     public void printData() {
-//        System.out.println("VIN: " + getVehicleIdentificationNumber());
+        System.out.println("Vehicle Identification Number: "+ prefixer());
         System.out.println("Vehicle Description: " + getVehicleDescription());
         System.out.println("Manufacturer Name: " + getManufacturerName());
         System.out.println("Self Drive: " + isSelfDrive());

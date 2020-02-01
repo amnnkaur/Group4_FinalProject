@@ -61,10 +61,6 @@ public class VehicleRent {
         this.totalFare = totalFare;
     }
 
- /*   public static void main(String[] args) {
- vehicle.put("IND","INDIA");
-        for(Map.Entry<String,String>entry:vehicle.entrySet()) {
-            System.out.println(entry.getKey() + " - " + entry.getValue());
-        }*/
+
     }
 

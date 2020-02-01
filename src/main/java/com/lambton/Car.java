@@ -23,7 +23,7 @@ public class Car extends Vehicle {
         super(vehicleIdentificationNumber, vehicleDescription, manufacturerName,
                 isSelfDrive, /*driver,*/ isInsured, /*insuranceNameProvider,*/
                 noOfSeat, fuelType/*, vehicleType, baseRate, ratePerKm*/);
-        super.vehicleType=Type.Car;
+        super.vehicleType = Type.Car;
         this.carType = carType;
         this.carColor = carColor;
     }
@@ -45,14 +45,11 @@ public class Car extends Vehicle {
     }
 
 
-
     @Override
     public void printData() {
-        System.out.println("Vehicle Identification Number: "+ prefixer());
         super.printData();
-        System.out.println("Car Type: "+ getCarType());
-        System.out.println("Car Color: "+ getCarColor());
-//        System.out.println("Vehicle List: "+getVehicleList());
+        System.out.println("Car Type: " + getCarType());
+        System.out.println("Car Color: " + getCarColor());
         System.out.println();
     }
 }

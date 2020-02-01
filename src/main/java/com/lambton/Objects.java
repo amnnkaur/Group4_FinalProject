@@ -38,11 +38,17 @@ public class Objects {
                 "Harley",true,false,2,Fuel.Petrol,
                 56.50d,15.10d);
         m1.printData();
-        Bus b1=new Bus(4,"Here only",
+        Bus b2=new Bus(4,"Here only",
+                "Volvo",true,false,7,Fuel.Electric,
+                BusType.MiniCoach,true,true);
+        Bus b1=new Bus(5,"Here only",
                 "Volvo",true,false,7,Fuel.Electric,
                 BusType.MiniCoach,true,true);
         b1.printData();
 
-        System.out.println("Vehicle List: "+Vehicle.getVehicleList());
+        b2.printData();
+
+
+        System.out.println(/*"Vehicle List: "+*/Vehicle.getVehicleList());
     }
 }
