@@ -15,4 +15,11 @@ public class Driver extends Person {
         this.isDrivingHistoryCleared = isDrivingHistoryCleared;
         this.salary = salary;
     }
+    public long getLicenceNumber() {
+        return licenceNumber;
+    }
+
+    public void setLicenceNumber(long licenceNumber) {
+        this.licenceNumber = licenceNumber;
+    }
 }
