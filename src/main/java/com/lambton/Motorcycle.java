@@ -33,13 +33,7 @@ public class Motorcycle extends Vehicle {
         this.milage = milage;
     }
 
-/*
-    public String prefixer() {
-        str = new String(String.valueOf(prefixers.MOT) + "_");
-        str = str.concat(String.valueOf(vehicleIdentificationNumber));
-        return str;
-    }
-*/
+
 
     @Override
     public void printData() {

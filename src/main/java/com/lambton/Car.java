@@ -44,11 +44,7 @@ public class Car extends Vehicle {
         this.carColor = carColor;
     }
 
-/*    public String prefixer() {
-        str = new String(String.valueOf(prefixers.CAR) + "_");
-        str = str.concat(String.valueOf(vehicleIdentificationNumber));
-        return str;
-    }*/
+
 
     @Override
     public void printData() {

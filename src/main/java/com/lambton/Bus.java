@@ -54,11 +54,7 @@ public class Bus extends Vehicle {
         isWifiAvailable = wifiAvailable;
     }
 
-/*    public String prefixer() {
-        str = new String(String.valueOf(prefixers.BUS) + "_");
-        str = str.concat(String.valueOf(vehicleIdentificationNumber));
-        return str;
-    }*/
+
 
     @Override
     public void printData() {
