@@ -26,7 +26,9 @@ public abstract class Person {
     String mobileNumber;
     String emailId;
     String userName;
-    char[] password;
+    String password;
+
+    String str;
     static String[] months = new String[]{"null",
             "January",
             "February",
@@ -40,6 +42,28 @@ public abstract class Person {
             "October",
             "November",
             "December"};
+
+    public Person(int id,
+                  String firstName,
+                  String lastName,
+                  Gender gender,
+                  Date birthDate,
+                  String mobileNumber,
+                  String emailId,
+                  String userName,
+                  String password
+    ) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.birthDate = birthDate;
+        this.mobileNumber = mobileNumber;
+        this.emailId = emailId;
+        this.userName = userName;
+        this.password = password;
+
+    }
 
     public int getId() {
         return id;
@@ -104,55 +128,40 @@ public abstract class Person {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
-    public char[] getPassword() {
+    public String getOriginalPassword(){
         return password;
     }
+    public char[] getPassword() {
+        char[] encryptedPassword = password.toCharArray();
+        return encryptedPassword;
+    }
 
-    public void setPassword(char[] password) {
+    public void setPassword(String password) {
         this.password = password;
     }
+
     private int getAge() {
         LocalDate today = LocalDate.now();
         this.age = today.getYear() - birthDate.getYear();
         return age;
     }
 
-        public void setData(int id,
-                        String firstName,
-                        String lastName,
-                        Gender gender,
-                        Date birthDate,
-                        String mobileNumber,
-                        String emailId,
-                        String userName,
-                        char[] password
-                        ) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.gender = gender;
-        this.birthDate = birthDate;
-            this.mobileNumber = mobileNumber;
-        this.emailId = emailId;
-        this.userName = userName;
-        this.password=password;
 
+
+
+    public void printData() {
+        System.out.println("First Name: " + getFirstName());
+        System.out.println("Last Name: " + getLastName());
+        System.out.println("Gender: " + getGender());
+        System.out.println("Birth Date: " + getBirthDate().getDate() + "/" + months[getBirthDate().getMonth()] + "/" + getBirthDate().getYear());
+        System.out.println("Email: " + getEmailId());
+        System.out.println("Mobile Number: " + getMobileNumber());
+        System.out.println("Age: " + getAge() + " years");
+        System.out.println("User name: " + getUserName());
+        System.out.println("Password: " + getPassword());
+        System.out.println("Original password: " +getOriginalPassword());
     }
 
 
-  /*  public void printData() {
-        System.out.println("First Name: " + firstName);
-        System.out.println("Last Name: " + lastName);
-        System.out.println("Full Name: " + firstName.concat(" " + lastName));
-        System.out.println("Birth Date: " + birthDate.getDate() + "/" + months[birthDate.getMonth()] + "/" + birthDate.getYear());
-        System.out.println("Gender: " + gender);
-        System.out.println("Email: " + email);
-        System.out.println("Address: " + address);
-        System.out.println("Contact Number: " + contactNumber);
-        System.out.println("Age: " + getAge() + " years");
-    }*/
-
-    public abstract void finalExecution();
 
 }
