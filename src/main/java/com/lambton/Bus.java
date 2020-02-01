@@ -1,10 +1,12 @@
 package com.lambton;
+
 enum BusType{
     MiniBus,
     Volvo,
     DoubleDecker,
     MiniCoach
 }
+
 public class Bus extends Vehicle {
 
 
@@ -27,6 +29,7 @@ public class Bus extends Vehicle {
         this.isAccessibilityServiceAvailable=isAccessibilityServiceAvailable;
         this.isWifiAvailable=isWifiAvailable;
     }
+
     public BusType getTypeOfBus() {
         return typeOfBus;
     }
@@ -50,4 +53,19 @@ public class Bus extends Vehicle {
     public void setWifiAvailable(boolean wifiAvailable) {
         isWifiAvailable = wifiAvailable;
     }
+    public String prefixer() {
+        str = new String(String.valueOf(prefixers.BUS) + "_");
+        str = str.concat(String.valueOf(vehicleIdentificationNumber));
+        return str;
+    }
+
+    @Override
+    public void printData() {
+        System.out.println("Vehicle Identification Number: "+prefixer());
+        super.printData();
+        System.out.println("Bus Type: "+ getTypeOfBus());
+        System.out.println("Accessibility Service Avavilable: "+isAccessibilityServiceAvailable());
+        System.out.println("Wifi Available: "+isWifiAvailable());
+    }
+
 }
