@@ -6,4 +6,7 @@ enum BusType{
     MiniCoach
 }
 public class Bus {
+    BusType typeOfBus;
+    boolean isAccessibilityServiceAvailable;
+    boolean isWifiAvailable;
 }
