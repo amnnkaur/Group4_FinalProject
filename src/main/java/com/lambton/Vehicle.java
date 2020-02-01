@@ -59,4 +59,84 @@ public abstract class Vehicle {
        /* this.baseRate = baseRate;
         this.ratePerKm = ratePerKm;*/
     }
+    public Type getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(Type vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
+    public long getVehicleIdentificationNumber() {
+        return vehicleIdentificationNumber;
+    }
+
+    public void setVehicleIdentificationNumber(long vehicleIdentificationNumber) {
+        this.vehicleIdentificationNumber = vehicleIdentificationNumber;
+    }
+
+    public String getVehicleDescription() {
+        return vehicleDescription;
+    }
+
+    public void setVehicleDescription(String vehicleDescription) {
+        this.vehicleDescription = vehicleDescription;
+    }
+
+    public String getManufacturerName() {
+        return manufacturerName;
+    }
+
+    public void setManufacturerName(String manufacturerName) {
+        this.manufacturerName = manufacturerName;
+    }
+
+    public boolean isSelfDrive() {
+
+        return isSelfDrive;
+    }
+
+    public void setSelfDrive(boolean selfDrive) {
+        isSelfDrive = selfDrive;
+    }
+
+    public String getDriver() {
+        return Driver;
+    }
+
+    public void setDriver(String driver) {
+        Driver = driver;
+    }
+
+    public boolean isInsured() {
+        return isInsured;
+    }
+
+    public void setInsured(boolean insured) {
+        isInsured = insured;
+    }
+
+    public String getInsuranceNameProvider() {
+        return insuranceNameProvider;
+    }
+
+    public void setInsuranceNameProvider(String insuranceNameProvider) {
+        this.insuranceNameProvider = insuranceNameProvider;
+    }
+
+    public int getNoOfSeat() {
+        return noOfSeat;
+    }
+
+    public void setNoOfSeat(int noOfSeat) {
+        this.noOfSeat = noOfSeat;
+    }
+
+    public Fuel getFuelType() {
+        return fuelType;
+    }
+
+    public void setFuelType(Fuel fuelType) {
+        this.fuelType = fuelType;
+    }
 }
