@@ -19,5 +19,13 @@ public class Objects {
         d1.setDrivingHistoryCleared(false);
         d1.printData();
 
+        Owner o1 = new Owner(1, "Caria", "MacNamee", Gender.Female, new Date(1997, 05, 25),
+                "6723367", "me@me.com", "Caria", "ghat",
+                "Eimbee", "2989624526", "auda.org.au");
+
+        String[] ref = new String[]{"Ford", "BMW", "Audi"};
+        o1.setVehicleListOwned(ref);
+        o1.printData();
+
     }
 }
