@@ -22,4 +22,13 @@ public class Driver extends Person {
     public void setLicenceNumber(long licenceNumber) {
         this.licenceNumber = licenceNumber;
     }
+    public String isDrivingHistoryCleared() {
+        String status;
+        if (isDrivingHistoryCleared == true) {
+            status = "Clear";
+        } else {
+            status = "Unclear";
+        }
+        return status;
+    }
 }
