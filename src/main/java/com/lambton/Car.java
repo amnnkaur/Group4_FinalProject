@@ -47,4 +47,12 @@ public class Car extends Vehicle {
         str = str.concat(String.valueOf(vehicleIdentificationNumber));
         return str;
     }
+    @Override
+    public void printData() {
+        System.out.println("Vehicle Identification Number: "+ prefixer());
+        super.printData();
+        System.out.println("Car Type: "+ getCarType());
+        System.out.println("Car Color: "+ getCarColor());
+        System.out.println();
+    }
 }
