@@ -1,6 +1,14 @@
 package com.lambton;
 
+import javax.xml.soap.Text;
 import java.util.Scanner;
+
+enum prefixers{
+    CAR,
+    MOT,
+    BUS
+}
+
 enum Fuel {
     Petrol,
     Diesel,
@@ -12,6 +20,7 @@ enum Type {
     Motorcycle,
     Bus
 }
+
 public abstract class Vehicle {
     String str;
     long vehicleIdentificationNumber;
@@ -59,6 +68,7 @@ public abstract class Vehicle {
        /* this.baseRate = baseRate;
         this.ratePerKm = ratePerKm;*/
     }
+
     public Type getVehicleType() {
         return vehicleType;
     }
@@ -178,6 +188,11 @@ public abstract class Vehicle {
         }
         return ratePerKm;
     }
+
+/*    public void setRatePerKm(int ratePerKm) {
+        this.ratePerKm = ratePerKm;
+    }*/
+
     public void printData() {
 //        System.out.println("VIN: " + getVehicleIdentificationNumber());
         System.out.println("Vehicle Description: " + getVehicleDescription());
@@ -191,4 +206,6 @@ public abstract class Vehicle {
         System.out.println("Base Rate: " +"$"+getBaseRate());
         System.out.println("Rate per km: " +"$"+getRatePerKm());
     }
+
+
 }
