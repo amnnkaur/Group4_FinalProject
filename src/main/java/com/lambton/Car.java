@@ -27,4 +27,20 @@ public class Car extends Vehicle {
         this.carType = carType;
         this.carColor = carColor;
     }
+    public CarType getCarType() {
+        return carType;
+    }
+
+    public void setCarType(CarType carType) {
+        this.carType = carType;
+    }
+
+    public String getCarColor() {
+        return carColor;
+    }
+
+    public void setCarColor(String carColor) {
+        this.carColor = carColor;
+    }
+
 }
