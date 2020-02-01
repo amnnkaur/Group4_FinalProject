@@ -1,6 +1,7 @@
 package com.lambton;
 
 import javax.xml.soap.Text;
+import java.util.HashMap;
 import java.util.Scanner;
 
 enum prefixers{
@@ -35,10 +36,14 @@ public abstract class Vehicle {
     Type vehicleType;
     int baseRate;
     int ratePerKm;
+    HashMap<String,String>vehicleList=new HashMap<>();
 
-    public Vehicle(long vehicleIdentificationNumber, String vehicleDescription, String manufacturerName, boolean isSelfDrive,
-                   /*String driver,*/ boolean isInsured, /*String insuranceNameProvider,*/
-                   int noOfSeat, Fuel fuelType/*, Type vehicleType, int baseRate, int ratePerKm*/) {
+    public Vehicle(long vehicleIdentificationNumber,
+                   String vehicleDescription,
+                   String manufacturerName,
+                   boolean isSelfDrive,
+                    boolean isInsured,
+                   int noOfSeat, Fuel fuelType) {
         this.vehicleIdentificationNumber = vehicleIdentificationNumber;
         this.vehicleDescription = vehicleDescription;
         this.manufacturerName = manufacturerName;
@@ -64,9 +69,7 @@ public abstract class Vehicle {
 
         this.noOfSeat = noOfSeat;
         this.fuelType = fuelType;
-//        this.vehicleType = vehicleType;
-       /* this.baseRate = baseRate;
-        this.ratePerKm = ratePerKm;*/
+
     }
 
     public Type getVehicleType() {

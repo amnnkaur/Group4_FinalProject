@@ -28,10 +28,10 @@ public class Objects {
         o1.printData();
 
         Car car1 = new Car(15498, "New Car", "Ford",
-                false, false, 4, Fuel.Electric, CarType.Sedan, "Blue");
+                true, false, 4, Fuel.Electric, CarType.Sedan, "Blue");
         car1.printData();
         Motorcycle m1= new Motorcycle(1548974,"Hashtag",
-                "Harley",false,true,2,Fuel.Petrol,
+                "Harley",true,false,2,Fuel.Petrol,
                 56.50d,15.10d);
         m1.printData();
         Bus b1=new Bus(154157,"Here only",
