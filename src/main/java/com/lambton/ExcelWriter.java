@@ -383,6 +383,10 @@ public class ExcelWriter {
 
             row.createCell(3)
                     .setCellValue(owner.getGender().toString());
+
+            Cell dateOfBirthCell = row.createCell(4);
+            dateOfBirthCell.setCellValue(owner.getBirthDate());
+            dateOfBirthCell.setCellStyle(dateCellStyle);
         }
         }
 }
