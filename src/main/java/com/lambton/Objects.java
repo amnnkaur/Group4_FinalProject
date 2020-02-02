@@ -22,10 +22,10 @@ public class Objects {
 
         Owner o1 = new Owner(1, "Caria", "MacNamee", Gender.Female, new Date(1997, 05, 25),
                 "6723367", "me@me.com", "Caria", "ghat",
-                "Eimbee", "2989624526", "auda.org.au");
+                "Eimbee", "2989624526", "auda.org.au",2);
 
-        String[] ref = new String[]{"Ford", "BMW", "Audi"};
-        o1.setVehicleListOwned(ref);
+        //String[] ref = new String[]{"Ford", "BMW", "Audi"};
+       // o1.setVehicleListOwned(ref);
         o1.printData();
 
         Car car1 = new Car(11236, "New Car", "Ford",
