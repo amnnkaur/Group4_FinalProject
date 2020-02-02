@@ -37,8 +37,8 @@ public class Motorcycle extends Vehicle {
     @Override
     public void printData() {
         super.printData();
-        System.out.println("Top Speed: " + getTopSpeed());
-        System.out.println("Mileage: " + getMilage());
+        System.out.println("Top Speed: " + getTopSpeed()+"km/hr");
+        System.out.println("Mileage: " + getMilage()+" mpg");
         System.out.println();
     }
 }
