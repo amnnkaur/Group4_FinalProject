@@ -336,10 +336,36 @@ public class ExcelWriter {
 
             row.createCell(3)
                     .setCellValue(driver.getGender().toString());
-            
+
             Cell dateOfBirthCell = row.createCell(4);
             dateOfBirthCell.setCellValue(driver.getBirthDate());
             dateOfBirthCell.setCellStyle(dateCellStyle);
+            
+            row.createCell(5)
+                    .setCellValue(driver.getMobileNumber());
+
+            row.createCell(6)
+                    .setCellValue(Person.age);
+
+            row.createCell(7)
+                    .setCellValue(driver.getEmailId());
+
+            row.createCell(8)
+                    .setCellValue(driver.getUserName());
+
+            row.createCell(9)
+                    .setCellValue(driver.getPassword());
+
+            row.createCell(10)
+                    .setCellValue(driver.getOriginalPassword());
+
+            row.createCell(11)
+                    .setCellValue(driver.getLicenceNumber());
+
+            row.createCell(12)
+                    .setCellValue(driver.isDrivingHistoryCleared());
+            row.createCell(13)
+                    .setCellValue(driver.getSalary());
 
         }
     }
