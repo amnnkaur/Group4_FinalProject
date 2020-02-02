@@ -6,6 +6,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Random;
 
 public class PasswordUtils {
@@ -35,5 +36,10 @@ public class PasswordUtils {
             spec.clearPassword();
         }
     }
-
+    public static String generateSecurePassword(String password, String salt) {
+        String returnValue = null;
+        byte[] securePassword = hash(password.toCharArray(), salt.getBytes());
+        returnValue = Base64.getEncoder().encodeToString(securePassword);
+        return returnValue;
+    }
 }
