@@ -501,5 +501,51 @@ public class ExcelWriter {
             row.createCell(12)
                     .setCellValue(motorcycle.getMilage());
         }
+        int busRowNum = 1;
+        for (Bus bus : buses) {
+            Row row = bussheet.createRow(busRowNum++);
+
+            row.createCell(0)
+                    .setCellValue(bus.getVehicleIdentificationNumber());
+
+            row.createCell(1)
+                    .setCellValue(bus.getVehicleDescription());
+
+            row.createCell(2)
+                    .setCellValue(bus.getManufacturerName());
+
+            row.createCell(3)
+                    .setCellValue(bus.isSelfDrive());
+
+            row.createCell(4)
+                    .setCellValue(bus.getDriver());
+
+            row.createCell(5)
+                    .setCellValue(bus.isInsured());
+
+            row.createCell(6)
+                    .setCellValue(bus.getInsuranceNameProvider());
+
+            row.createCell(7)
+                    .setCellValue(bus.getNoOfSeat());
+
+            row.createCell(8)
+                    .setCellValue(bus.getFuelType().toString());
+
+            row.createCell(9)
+                    .setCellValue(bus.getBaseRate());
+
+            row.createCell(10)
+                    .setCellValue(bus.getRatePerKm());
+
+            row.createCell(11)
+                    .setCellValue(bus.getTypeOfBus().toString());
+
+            row.createCell(12)
+                    .setCellValue(bus.isAccessibilityServiceAvailable());
+
+            row.createCell(13)
+                    .setCellValue(bus.isWifiAvailable());
+        }
 }
 }
