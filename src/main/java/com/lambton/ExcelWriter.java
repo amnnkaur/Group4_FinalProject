@@ -199,5 +199,11 @@ public class ExcelWriter {
         Sheet motorcyclesheet = workbook.createSheet("Motorcycle");//motorcycle
         Sheet bussheet = workbook.createSheet("Bus");//bus
         Sheet vehiclerentsheet = workbook.createSheet("Vehicle Rent");//Vehicle Rent
+
+        // Create a Font for styling header cells
+        Font headerFont = workbook.createFont();
+        headerFont.setBold(true);
+        headerFont.setFontHeightInPoints((short) 14);
+        headerFont.setColor(IndexedColors.BLACK.getIndex());
     }
 }
