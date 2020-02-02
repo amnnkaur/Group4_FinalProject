@@ -1,5 +1,8 @@
 package com.lambton;
 
+import com.sun.media.sound.InvalidFormatException;
+
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -170,5 +173,7 @@ public class ExcelWriter {
                 LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,11458,15.25f));
     }
 
-
+    public static void main(String[] args) throws IOException, InvalidFormatException {
+       
+    }
 }
