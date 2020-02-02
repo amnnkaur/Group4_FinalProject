@@ -15,8 +15,7 @@ public class Owner extends Person {
     int count;
     int vehicleId;
     String valueFromMap = null;
-    HashMap<Integer, HashMap<String,String>>ownedVehicle=new HashMap<>();
-
+    HashMap<Integer,HashMap<String,String>>ownedVehicle=new HashMap<>();
     public Owner(int id, String firstName, String lastName, Gender gender, Date birthDate,
                  String mobileNumber, String emailId, String userName, String password,
                  String companyTitle, String officeNumber, String website, int count) {
@@ -24,7 +23,7 @@ public class Owner extends Person {
         this.companyTitle = companyTitle;
         this.officeNumber = officeNumber;
         this.website = website;
-        /* this.count=count;
+       /* this.count=count;
         for(int i=0;i<count;i++){
         this.vehicleId=in.nextInt();
 //            this.ownedVehicle.put(id).put(String.valueOf(vehicleId),Vehicle.vehicleList.get(String.valueOf(vehicleId)));
@@ -34,8 +33,8 @@ public class Owner extends Person {
             }
         }
 //        this.ownedVehicle.put(id,Vehicle.vehicleList.get(vehicleId));*/
-
     }
+
     public HashMap<Integer, HashMap<String, String>> getOwnedVehicle() {
         System.out.println("Owned Vehicle List: ");
         for (Map.Entry<Integer, HashMap<String,String>> entry : ownedVehicle.entrySet()) {
@@ -43,6 +42,7 @@ public class Owner extends Person {
         }
         return null;
     }
+
     public void setOwnedVehicle(HashMap<Integer, HashMap<String, String>> ownedVehicle) {
 //       for(int i=0;i<count;i++)
     }
@@ -58,16 +58,12 @@ public class Owner extends Person {
         this.vehicleListOwned = vehicleListOwned;
     }*/
 
-    public String[] getVehicleListOwned() {
-        int i = 0;
-        for (i = 0; i < vehicleListOwned.length; i++) {
-            System.out.println("Vehicle " + (i + 1) + ": " + vehicleListOwned[i]);
-        }
-        return vehicleListOwned;
+    public int getCount() {
+        return count;
     }
 
-    public void setVehicleListOwned(String[] vehicleListOwned) {
-        this.vehicleListOwned = vehicleListOwned;
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public String getCompanyTitle() {
@@ -99,7 +95,6 @@ public class Owner extends Person {
         str = str.concat(String.valueOf(id));
         return str;
     }
-
     @Override
     public void printData() {
         System.out.println("Id: " + prefixPlacing());
@@ -107,7 +102,7 @@ public class Owner extends Person {
         System.out.println("Company Title: " + getCompanyTitle());
         System.out.println("Business Landline Number: " + getOfficeNumber());
         System.out.println("Website: " + getWebsite());
-        getVehicleListOwned();
+       // getVehicleListOwned();
         System.out.println();
     }
 }
