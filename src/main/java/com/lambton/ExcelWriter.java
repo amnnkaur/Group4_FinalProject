@@ -250,5 +250,10 @@ public class ExcelWriter {
             busCell.setCellValue(busColumns[i]);
             busCell.setCellStyle(headerCellStyle);
         }
+        for (int i = 0; i < vehicleRentColumns.length; i++) {
+            Cell vehiclerentCell = vehicleRentHeaderRow.createCell(i);
+            vehiclerentCell.setCellValue(vehicleRentColumns[i]);
+            vehiclerentCell.setCellStyle(headerCellStyle);
+        }
     }
 }
