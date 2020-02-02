@@ -163,20 +163,17 @@ public abstract class Person {
         return age;
     }
 
-
-
-
     public void printData() {
         System.out.println("First Name: " + getFirstName());
         System.out.println("Last Name: " + getLastName());
         System.out.println("Gender: " + getGender());
-        System.out.println("Birth Date: " + getBirthDate().getDate() + "/" + months[getBirthDate().getMonth()] + "/" + getBirthDate().getYear());
+        System.out.println("Birth Date: " + getBirthDate());
         System.out.println("Email: " + getEmailId());
         System.out.println("Mobile Number: " + getMobileNumber());
         System.out.println("Age: " + getAge() + " years");
         System.out.println("User name: " + getUserName());
         System.out.println("Password: " + getPassword());
-        System.out.println("Original password: " +getOriginalPassword());
+        System.out.println("Original password: " + getOriginalPassword());
     }
 
 
