@@ -235,5 +235,10 @@ public class ExcelWriter {
             ownerCell.setCellValue(ownerColumns[i]);
             ownerCell.setCellStyle(headerCellStyle);
         }
+        for (int i = 0; i < carColumns.length; i++) {
+            Cell carCell = carHeaderRow.createCell(i);
+            carCell.setCellValue(carColumns[i]);
+            carCell.setCellStyle(headerCellStyle);
+        }
     }
 }
