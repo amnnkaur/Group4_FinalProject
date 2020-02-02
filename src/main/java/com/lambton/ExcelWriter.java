@@ -414,5 +414,49 @@ public class ExcelWriter {
             row.createCell(13)
                     .setCellValue(owner.getWebsite());
         }
+
+        int carRowNum = 1;
+        for (Car car : cars) {
+            Row row = carsheet.createRow(carRowNum++);
+
+            row.createCell(0)
+                    .setCellValue(car.getVehicleIdentificationNumber());
+
+            row.createCell(1)
+                    .setCellValue(car.getVehicleDescription());
+
+            row.createCell(2)
+                    .setCellValue(car.getManufacturerName());
+
+            row.createCell(3)
+                    .setCellValue(car.isSelfDrive());
+
+            row.createCell(4)
+                    .setCellValue(car.getDriver());
+
+            row.createCell(5)
+                    .setCellValue(car.isInsured());
+
+            row.createCell(6)
+                    .setCellValue(car.getInsuranceNameProvider());
+
+            row.createCell(7)
+                    .setCellValue(car.getNoOfSeat());
+
+            row.createCell(8)
+                    .setCellValue(car.getFuelType().toString());
+
+            row.createCell(9)
+                    .setCellValue(car.getBaseRate());
+
+            row.createCell(10)
+                    .setCellValue(car.getRatePerKm());
+
+            row.createCell(11)
+                    .setCellValue(car.getCarType().toString());
+
+            row.createCell(12)
+                    .setCellValue(car.getCarColor());
         }
+}
 }
