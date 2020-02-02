@@ -174,6 +174,12 @@ public class ExcelWriter {
     }
 
     public static void main(String[] args) throws IOException, InvalidFormatException {
-       
+// Create a Workbook
+        Workbook workbook = new XSSFWorkbook(); // new HSSFWorkbook() for generating `.xls` file
+//        Workbook driverWorkbook = new XSSFWorkbook();
+
+        /* CreationHelper helps us create instances of various things like DataFormat,
+           Hyperlink, RichTextString etc, in a format (HSSF, XSSF) independent way */
+        CreationHelper createHelper = workbook.getCreationHelper();
     }
 }
