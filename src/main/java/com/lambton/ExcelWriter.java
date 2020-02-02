@@ -218,5 +218,12 @@ public class ExcelWriter {
         Row motorcycleHeaderRow = motorcyclesheet.createRow(0);
         Row busHeaderRow = bussheet.createRow(0);
         Row vehicleRentHeaderRow = vehiclerentsheet.createRow(0);
+
+        // Create cells
+        for (int i = 0; i < columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
     }
 }
