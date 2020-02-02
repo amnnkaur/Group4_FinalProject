@@ -266,5 +266,7 @@ public class ExcelWriter {
         CellStyle ownerDateCellStyle = workbook.createCellStyle();
         ownerDateCellStyle.setDataFormat(driverCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
 
+        CellStyle carDateCellStyle = workbook.createCellStyle();
+        carDateCellStyle.setDataFormat(driverCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
     }
 }
