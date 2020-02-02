@@ -575,6 +575,27 @@ public class ExcelWriter {
 
         }
 
-
+// Resize all columns to fit the content size
+        for (int i = 0; i < columns.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+        for (int i = 0; i < driverColumns.length; i++) {
+            driversheet.autoSizeColumn(i);
+        }
+        for (int i = 0; i < ownerColumns.length; i++) {
+            ownersheet.autoSizeColumn(i);
+        }
+        for (int i = 0; i < carColumns.length; i++) {
+            carsheet.autoSizeColumn(i);
+        }
+        for (int i = 0; i < motorcycleColumns.length; i++) {
+            motorcyclesheet.autoSizeColumn(i);
+        }
+        for (int i = 0; i < busColumns.length; i++) {
+            bussheet.autoSizeColumn(i);
+        }
+        for (int i = 0; i < vehicleRentColumns.length; i++) {
+            vehiclerentsheet.autoSizeColumn(i);
+        }
     }
 }
