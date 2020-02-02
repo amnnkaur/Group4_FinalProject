@@ -142,4 +142,18 @@ public class ExcelWriter {
 
     }
 
+    static {
+        buses.add(new Bus(11254,"Here only",
+                "Volvo",true,false,7,Fuel.Electric,
+                BusType.MiniCoach,true,true));
+
+        buses.add(new Bus(11254,"Here only",
+                "Volvo",true,false,7,Fuel.Electric,
+                BusType.MiniCoach,true,true));
+
+        buses.add(new Bus(11254,"Here only",
+                "Volvo",false,false,7,Fuel.Electric,
+                BusType.MiniCoach,true,true));
+    }
+
 }
