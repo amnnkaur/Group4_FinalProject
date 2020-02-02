@@ -295,7 +295,31 @@ public class ExcelWriter {
             row.createCell(3)
                     .setCellValue(customer.getGender().toString());
 
+            Cell dateOfBirthCell = row.createCell(4);
+            dateOfBirthCell.setCellValue(customer.getBirthDate());
+            dateOfBirthCell.setCellStyle(dateCellStyle);
 
+            row.createCell(5)
+                    .setCellValue(customer.getMobileNumber());
+
+            row.createCell(6)
+                    .setCellValue(customer.getEmailId());
+
+            row.createCell(7)
+                    .setCellValue(customer.getUserName());
+
+            row.createCell(8)
+                    .setCellValue(customer.getPassword());
+
+            row.createCell(9)
+                    .setCellValue(customer.getOriginalPassword());
+
+            row.createCell(10)
+                    .setCellValue(customer.getAddress());
+
+            row.createCell(11)
+                    .setCellValue(customer.getCity());
+        
         }
     }
 }
