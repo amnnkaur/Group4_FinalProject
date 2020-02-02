@@ -43,6 +43,20 @@ public class Owner extends Person {
         }
         return null;
     }
+    public void setOwnedVehicle(HashMap<Integer, HashMap<String, String>> ownedVehicle) {
+//       for(int i=0;i<count;i++)
+    }
+/*    public String[] getVehicleListOwned() {
+        int i = 0;
+        for (i = 0; i < vehicleListOwned.length; i++) {
+            System.out.println("Vehicle " + (i + 1) + ": " + vehicleListOwned[i]);
+        }
+        return vehicleListOwned;
+    }
+
+    public void setVehicleListOwned(String[] vehicleListOwned) {
+        this.vehicleListOwned = vehicleListOwned;
+    }*/
 
     public String[] getVehicleListOwned() {
         int i = 0;
