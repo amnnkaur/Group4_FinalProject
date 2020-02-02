@@ -1,6 +1,7 @@
 package com.lambton;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Objects {
@@ -24,8 +25,8 @@ public class Objects {
                 "6723367", "me@me.com", "Caria", "ghat",
                 "Eimbee", "2989624526", "auda.org.au",2);
 
-        //String[] ref = new String[]{"Ford", "BMW", "Audi"};
-       // o1.setVehicleListOwned(ref);
+   /*     String[] ref = new String[]{"Ford", "BMW", "Audi"};
+        o1.setVehicleListOwned(ref);*/
         o1.printData();
 
         Car car1 = new Car(11236, "New Car", "Ford",
@@ -51,6 +52,7 @@ public class Objects {
 
 
         System.out.println(/*"Vehicle List: "+*/Vehicle.getVehicleList());
+        o1.getOwnedVehicle();
 //        System.out.println(/*"Vehicle List: "+*/Vehicle.getType());
         VehicleRent vr1=new VehicleRent(LocalDate.of(2020,01,15),
                 LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,11458,15.25f);
