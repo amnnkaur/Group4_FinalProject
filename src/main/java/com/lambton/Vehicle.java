@@ -238,17 +238,17 @@ public abstract class Vehicle {
     public static String prefixer() {
         switch (vehicleType) {
             case Car: {
-                str = new String(String.valueOf(prefixers.CAR));
+                str = new String(String.valueOf(prefixers.CAR+"_"));
                 str = str.concat(String.valueOf(vehicleIdentificationNumber));
                 break;
             }
             case Motorcycle: {
-                str = new String(String.valueOf(prefixers.MOT));
+                str = new String(String.valueOf(prefixers.MOT+"_"));
                 str = str.concat(String.valueOf(vehicleIdentificationNumber));
                 break;
             }
             case Bus: {
-                str = new String(String.valueOf(prefixers.BUS));
+                str = new String(String.valueOf(prefixers.BUS+"_"));
                 str = str.concat(String.valueOf(vehicleIdentificationNumber));
                 break;
             }
