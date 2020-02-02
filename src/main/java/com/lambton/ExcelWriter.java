@@ -601,5 +601,8 @@ public class ExcelWriter {
         // Write the output to a file
         FileOutputStream fileOut = new FileOutputStream("Car_Rental_System.xlsx");
         workbook.write(fileOut);
+        //driverWorkbook.write(fileOut);//driver
+        fileOut.close();
+
     }
 }
