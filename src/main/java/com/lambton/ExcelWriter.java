@@ -458,5 +458,48 @@ public class ExcelWriter {
             row.createCell(12)
                     .setCellValue(car.getCarColor());
         }
+        int motorcycleRowNum = 1;
+        for (Motorcycle motorcycle : motorcycles) {
+            Row row = motorcyclesheet.createRow(motorcycleRowNum++);
+
+            row.createCell(0)
+                    .setCellValue(motorcycle.getVehicleIdentificationNumber());
+
+            row.createCell(1)
+                    .setCellValue(motorcycle.getVehicleDescription());
+
+            row.createCell(2)
+                    .setCellValue(motorcycle.getManufacturerName());
+
+            row.createCell(3)
+                    .setCellValue(motorcycle.isSelfDrive());
+
+            row.createCell(4)
+                    .setCellValue(motorcycle.getDriver());
+
+            row.createCell(5)
+                    .setCellValue(motorcycle.isInsured());
+
+            row.createCell(6)
+                    .setCellValue(motorcycle.getInsuranceNameProvider());
+
+            row.createCell(7)
+                    .setCellValue(motorcycle.getNoOfSeat());
+
+            row.createCell(8)
+                    .setCellValue(motorcycle.getFuelType().toString());
+
+            row.createCell(9)
+                    .setCellValue(motorcycle.getBaseRate());
+
+            row.createCell(10)
+                    .setCellValue(motorcycle.getRatePerKm());
+
+            row.createCell(11)
+                    .setCellValue(motorcycle.getTopSpeed());
+
+            row.createCell(12)
+                    .setCellValue(motorcycle.getMilage());
+        }
 }
 }
