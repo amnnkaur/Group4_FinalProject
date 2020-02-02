@@ -1,6 +1,7 @@
 package com.lambton;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class ExcelWriter {
@@ -27,5 +28,20 @@ public class ExcelWriter {
     private static List<Motorcycle> motorcycles = new ArrayList<>();
     private static List<Bus> buses = new ArrayList<>();
     private static List<VehicleRent> vehiclesrents = new ArrayList<>();
+
+    static {
+        Calendar dateOfBirth = Calendar.getInstance();
+        dateOfBirth.set(1997, Calendar.NOVEMBER, 15);
+        customers.add(new Customer(11514, "Anmol", "Singh", Gender.Male,
+                dateOfBirth.getTime(),
+                "9988421530", "me@me.com",
+                "Me_AnmolSingh", "ghtutgd", "Brampton", "Toronto"));
+
+        dateOfBirth.set(1997, Calendar.JULY, 26);
+        customers.add(new Customer(11589, "Aman", "Kaur", Gender.Female,
+                dateOfBirth.getTime(),
+                "9547562145", "aman@aman.com",
+                "Me_AmanKaur", "458954hgtfr", "New York", "USA"));
+    }
 
 }
