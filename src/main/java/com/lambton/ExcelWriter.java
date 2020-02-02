@@ -209,5 +209,14 @@ public class ExcelWriter {
         // Create a CellStyle with the font
         CellStyle headerCellStyle = workbook.createCellStyle();
         headerCellStyle.setFont(headerFont);
+
+        // Create a Row
+        Row headerRow = sheet.createRow(0);
+        Row driverHeaderRow = driversheet.createRow(0);
+        Row ownerHeaderRow = ownersheet.createRow(0);
+        Row carHeaderRow = carsheet.createRow(0);
+        Row motorcycleHeaderRow = motorcyclesheet.createRow(0);
+        Row busHeaderRow = bussheet.createRow(0);
+        Row vehicleRentHeaderRow = vehiclerentsheet.createRow(0);
     }
 }
