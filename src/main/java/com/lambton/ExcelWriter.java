@@ -67,4 +67,33 @@ public class ExcelWriter {
                 "Me_kritima", "5475lkmnj", "Brampton", "Toronto"));
     }
 
+    static {
+        Calendar dateOfBirth = Calendar.getInstance();
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        drivers.add(new Driver(11265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
+                "9856475452", "raman@kumar.com", "KumarShanu",
+                "kjhujh", 456854, true, 5445.00f));
+
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        drivers.add(new Driver(11265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
+                "9856475452", "raman@kumar.com", "KumarShanu",
+                "kjhujh", 456854, true, 5445.00f));
+
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        drivers.add(new Driver(11265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
+                "9856475452", "raman@kumar.com", "KumarShanu",
+                "kjhujh", 456854, true, 5445.00f));
+
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        drivers.add(new Driver(11265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
+                "9856475452", "raman@kumar.com", "KumarShanu",
+                "kjhujh", 456854, true, 5445.00f));
+
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        drivers.add(new Driver(11265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
+                "9856475452", "raman@kumar.com", "KumarShanu",
+                "kjhujh", 456854, true, 540.15f));
+
+    }
+
 }
