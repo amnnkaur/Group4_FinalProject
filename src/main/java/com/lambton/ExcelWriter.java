@@ -1,5 +1,6 @@
 package com.lambton;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -154,6 +155,17 @@ public class ExcelWriter {
         buses.add(new Bus(11254,"Here only",
                 "Volvo",false,false,7,Fuel.Electric,
                 BusType.MiniCoach,true,true));
+    }
+
+    static {
+        vehiclesrents.add(new VehicleRent(LocalDate.of(2020,01,15),
+                LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,11458,15.25f));
+
+        vehiclesrents.add(new VehicleRent(LocalDate.of(2020,01,15),
+                LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,11458,15.25f));
+
+        vehiclesrents.add(new VehicleRent(LocalDate.of(2020,01,15),
+                LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,11458,15.25f));
     }
 
 }
