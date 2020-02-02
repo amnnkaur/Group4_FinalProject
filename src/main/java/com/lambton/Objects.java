@@ -35,14 +35,14 @@ public class Objects {
                 true, false, 4, Fuel.Electric, CarType.Sedan, "Blue");
         car1.printData();
         car2.printData();
-        Motorcycle m1= new Motorcycle(3,"Hashtag",
+        Motorcycle m1= new Motorcycle(4,"Hashtag",
                 "Harley",true,false,2,Fuel.Petrol,
                 56.50d,15.10d);
         m1.printData();
         Bus b2=new Bus(4,"Here only",
                 "Volvo",true,false,7,Fuel.Electric,
                 BusType.MiniCoach,true,true);
-        Bus b1=new Bus(4,"Here only",
+        Bus b1=new Bus(5,"Here only",
                 "Volv5",true,false,7,Fuel.Electric,
                 BusType.MiniCoach,true,true);
         b1.printData();
@@ -53,7 +53,7 @@ public class Objects {
         System.out.println(/*"Vehicle List: "+*/Vehicle.getVehicleList());
 
         VehicleRent vr1=new VehicleRent(LocalDate.of(2020,01,15),
-                LocalDate.of(2020,01,25),6,15.25f);
+                LocalDate.of(2020,01,25),"BUS_5",15.25f);
         vr1.printData();
     }
 }

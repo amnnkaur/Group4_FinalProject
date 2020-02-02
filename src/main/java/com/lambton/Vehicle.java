@@ -23,12 +23,12 @@ enum Type {
 }
 
 public abstract class Vehicle {
-    String str;
+    static String str;
     String prefixer;
     /*   static String key;
        static String value;
        static String hashMap;*/
-    long vehicleIdentificationNumber;
+    static long vehicleIdentificationNumber;
     String vehicleDescription;
     String manufacturerName;
     boolean isSelfDrive;
@@ -82,7 +82,7 @@ public abstract class Vehicle {
                 manufacturerName);*/
     }
 
-    public void setHashmap(){
+    public void setHashmap() {
 //        this.prefixer=prefixer();
         this.vehicleList.put(String.valueOf(prefixer()),
                 manufacturerName);
@@ -228,7 +228,7 @@ public abstract class Vehicle {
         return ratePerKm;
     }
 
-    public String prefixer() {
+    public static String prefixer() {
         switch (vehicleType) {
             case Car: {
                 str = new String(String.valueOf(prefixers.CAR) + "_");
@@ -251,7 +251,6 @@ public abstract class Vehicle {
         }
         return str;
     }
-
 
 
     public void printData() {

@@ -7,16 +7,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.time.temporal.ChronoUnit;
 
+
 public class VehicleRent {
     LocalDate rentStartDate;
     LocalDate rentEndDate;
     long rentedDays;
-    long vehicleId;
+    String vehicleId;
     String vehicleName;
     float noOfKmDrived;
     float totalFare;
 
-    public VehicleRent(LocalDate rentStartDate, LocalDate rentEndDate, long vehicleId, float noOfKmDrived) {
+
+
+    public VehicleRent(LocalDate rentStartDate, LocalDate rentEndDate ,String vehicleId, float noOfKmDrived) {
         this.rentStartDate = rentStartDate;
         this.rentEndDate = rentEndDate;
         this.vehicleId = vehicleId;
@@ -64,9 +67,11 @@ public class VehicleRent {
         this.noOfKmDrived = noOfKmDrived;
     }
 
-    public float getTotalFare() {
-        switch (Vehicle.vehicleType) {
-            case Car: {
+/*    public float getTotalFare() {
+        String s=Vehicle.vehicleList.get();
+        s.concat("");
+        switch (Vehicle.vehicleList) {
+            case : {
                 totalFare = 100 * getRentedDays() + (getNoOfKmDrived() * 5);
                 break;
             }
@@ -83,7 +88,7 @@ public class VehicleRent {
                 break;
         }
         return totalFare;
-    }
+    }*/
 
 /*    public void setTotalFare(float totalFare) {
         this.totalFare = totalFare;
@@ -95,7 +100,7 @@ public class VehicleRent {
         System.out.println("Rent in No. of days: " + getRentedDays());
         System.out.println("Vehicle: " + getVehicleName());
         System.out.println("No. of Km. drived: " + getNoOfKmDrived());
-        System.out.println("Total bill to pay: " + getTotalFare());
+//        System.out.println("Total bill to pay: " + getTotalFare());
     }
 }
 
