@@ -604,5 +604,8 @@ public class ExcelWriter {
         //driverWorkbook.write(fileOut);//driver
         fileOut.close();
 
+        // Closing the workbook
+        workbook.close();
+//        driverWorkbook.close();//driver
     }
 }
