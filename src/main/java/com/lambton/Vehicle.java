@@ -80,7 +80,7 @@ public abstract class Vehicle {
                 manufacturerName);
     }
 
-    public  void setVehicleList(HashMap<String, String> vehicleList) {
+    public void setVehicleList(HashMap<String, String> vehicleList) {
 //        prefixer();
 //        this.vehicleList.put(prefixer(),manufacturerName);
     }

@@ -9,9 +9,15 @@ public class VehicleRent {
     LocalDate rentStartDate;
     LocalDate rentEndDate;
     int rentedDays;
-    static HashMap<String, String> vehicle = new HashMap<>();
+//    static HashMap<String, String> vehicle = new HashMap<>();
     float noOfKmDrived;
     float totalFare;
+
+    public VehicleRent(LocalDate rentStartDate, LocalDate rentEndDate, float noOfKmDrived) {
+        this.rentStartDate = rentStartDate;
+        this.rentEndDate = rentEndDate;
+        this.noOfKmDrived = noOfKmDrived;
+    }
 
     public LocalDate getRentStartDate() {
         return rentStartDate;
@@ -37,13 +43,13 @@ public class VehicleRent {
         this.rentedDays = rentedDays;
     }
 
-    public static HashMap<String, String> getVehicle() {
+/*    public static HashMap<String, String> getVehicle() {
         return vehicle;
     }
 
     public static void setVehicle(HashMap<String, String> vehicle) {
         VehicleRent.vehicle = vehicle;
-    }
+    }*/
 
     public float getNoOfKmDrived() {
         return noOfKmDrived;
@@ -57,9 +63,9 @@ public class VehicleRent {
         return totalFare;
     }
 
-    public void setTotalFare(float totalFare) {
+/*    public void setTotalFare(float totalFare) {
         this.totalFare = totalFare;
-    }
+    }*/
 
 
     }
