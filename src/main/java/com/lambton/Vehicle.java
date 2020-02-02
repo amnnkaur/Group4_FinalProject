@@ -78,15 +78,15 @@ public abstract class Vehicle {
         this.noOfSeat = noOfSeat;
         this.fuelType = fuelType;
 
-  /*      this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
-                manufacturerName);*/
+        this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
+                manufacturerName);
     }
 
-    public void setHashmap() {
+/*    public void setHashmap() {
 //        this.prefixer=prefixer();
         this.vehicleList.put(String.valueOf(prefixer()),
                 manufacturerName);
-    }
+    }*/
 
     public void setVehicleList(HashMap<String, String> vehicleList) {
 //        prefixer();
@@ -254,7 +254,7 @@ public abstract class Vehicle {
 
 
     public void printData() {
-        setHashmap();
+//        setHashmap();
 
         System.out.println("Vehicle Identification Number: " + prefixer());
         System.out.println("Vehicle Description: " + getVehicleDescription());
