@@ -2,6 +2,7 @@ package com.lambton;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Owner extends Person {
@@ -23,7 +24,24 @@ public class Owner extends Person {
         this.companyTitle = companyTitle;
         this.officeNumber = officeNumber;
         this.website = website;
+        /* this.count=count;
+        for(int i=0;i<count;i++){
+        this.vehicleId=in.nextInt();
+//            this.ownedVehicle.put(id).put(String.valueOf(vehicleId),Vehicle.vehicleList.get(String.valueOf(vehicleId)));
 
+            if(Vehicle.vehicleList.containsKey(vehicleId)){
+                this.valueFromMap = ownedVehicle.get(id).get(Vehicle.vehicleList.get(String.valueOf(vehicleId)));
+            }
+        }
+//        this.ownedVehicle.put(id,Vehicle.vehicleList.get(vehicleId));*/
+
+    }
+    public HashMap<Integer, HashMap<String, String>> getOwnedVehicle() {
+        System.out.println("Owned Vehicle List: ");
+        for (Map.Entry<Integer, HashMap<String,String>> entry : ownedVehicle.entrySet()) {
+            System.out.println(entry.getKey() + " - "  +entry.getValue());
+        }
+        return null;
     }
 
     public String[] getVehicleListOwned() {
