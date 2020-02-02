@@ -245,5 +245,10 @@ public class ExcelWriter {
             motorcycleCell.setCellValue(motorcycleColumns[i]);
             motorcycleCell.setCellStyle(headerCellStyle);
         }
+        for (int i = 0; i < busColumns.length; i++) {
+            Cell busCell = busHeaderRow.createCell(i);
+            busCell.setCellValue(busColumns[i]);
+            busCell.setCellStyle(headerCellStyle);
+        }
     }
 }
