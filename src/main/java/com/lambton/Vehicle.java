@@ -49,12 +49,9 @@ public abstract class Vehicle {
                    boolean isInsured,
                    int noOfSeat, Fuel fuelType) {
         this.vehicleIdentificationNumber = vehicleIdentificationNumber;
-//        this.prefixer=prefixer();
         this.vehicleDescription = vehicleDescription;
         this.manufacturerName = manufacturerName;
-
         this.isSelfDrive = isSelfDrive;
-
         if (isSelfDrive == false) {
             System.out.println("Enter Driver's Name: ");
             Scanner inputDriver = new Scanner(System.in);
@@ -63,9 +60,7 @@ public abstract class Vehicle {
         } else {
             this.Driver = null;
         }
-
         this.isInsured = isInsured;
-
         if (isInsured == true) {
             System.out.println("Input Insurance Name Provider: ");
             Scanner inputInsuranceProvider = new Scanner(System.in);
@@ -74,12 +69,11 @@ public abstract class Vehicle {
         } else {
             this.insuranceNameProvider = null;
         }
-
         this.noOfSeat = noOfSeat;
         this.fuelType = fuelType;
-
         this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
                 manufacturerName);
+
     }
 
 /*    public void setHashmap() {
@@ -231,17 +225,17 @@ public abstract class Vehicle {
     public static String prefixer() {
         switch (vehicleType) {
             case Car: {
-                str = new String(String.valueOf(prefixers.CAR) + "_");
+                str = new String(String.valueOf(prefixers.CAR));
                 str = str.concat(String.valueOf(vehicleIdentificationNumber));
                 break;
             }
             case Motorcycle: {
-                str = new String(String.valueOf(prefixers.MOT) + "_");
+                str = new String(String.valueOf(prefixers.MOT));
                 str = str.concat(String.valueOf(vehicleIdentificationNumber));
                 break;
             }
             case Bus: {
-                str = new String(String.valueOf(prefixers.BUS) + "_");
+                str = new String(String.valueOf(prefixers.BUS));
                 str = str.concat(String.valueOf(vehicleIdentificationNumber));
                 break;
             }

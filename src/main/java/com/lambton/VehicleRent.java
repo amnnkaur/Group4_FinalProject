@@ -12,14 +12,15 @@ public class VehicleRent {
     LocalDate rentStartDate;
     LocalDate rentEndDate;
     long rentedDays;
-    String vehicleId;
+    long vehicleId;
     String vehicleName;
+    String vehicleType;
     float noOfKmDrived;
     float totalFare;
 
 
 
-    public VehicleRent(LocalDate rentStartDate, LocalDate rentEndDate ,String vehicleId, float noOfKmDrived) {
+    public VehicleRent(LocalDate rentStartDate, LocalDate rentEndDate ,long vehicleId, float noOfKmDrived) {
         this.rentStartDate = rentStartDate;
         this.rentEndDate = rentEndDate;
         this.vehicleId = vehicleId;
@@ -35,6 +36,17 @@ public class VehicleRent {
             vehicleName = "Invalid Vehicle Entry";
         }
         return vehicleName;
+    }
+    public String getVehicleType(){
+        if(Vehicle.vehicleList.containsKey(String.valueOf(vehicleId))){
+            System.out.println("if Block");
+            vehicleType=Vehicle.vehicleList.get(Vehicle.prefixer().contains("11458"));
+        }
+        else{
+            vehicleType="Invalid";
+        }
+
+        return vehicleType;
     }
 
     public LocalDate getRentStartDate() {
@@ -99,6 +111,7 @@ public class VehicleRent {
         System.out.println("Rent End Date: " + getRentEndDate());
         System.out.println("Rent in No. of days: " + getRentedDays());
         System.out.println("Vehicle: " + getVehicleName());
+        System.out.println("Vehicle Type: "+getVehicleType());
         System.out.println("No. of Km. drived: " + getNoOfKmDrived());
 //        System.out.println("Total bill to pay: " + getTotalFare());
     }

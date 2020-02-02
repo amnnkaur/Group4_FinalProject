@@ -53,7 +53,7 @@ public class Objects {
         System.out.println(/*"Vehicle List: "+*/Vehicle.getVehicleList());
 
         VehicleRent vr1=new VehicleRent(LocalDate.of(2020,01,15),
-                LocalDate.of(2020,01,25),"11458",15.25f);
+                LocalDate.of(2020,01,25),11458,15.25f);
         vr1.printData();
     }
 }
