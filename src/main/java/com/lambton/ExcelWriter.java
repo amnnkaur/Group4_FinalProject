@@ -547,5 +547,34 @@ public class ExcelWriter {
             row.createCell(13)
                     .setCellValue(bus.isWifiAvailable());
         }
-}
+
+        int vehiclerentRowNum = 1;
+        for (VehicleRent vehicleRent : vehiclesrents) {
+            Row row = vehiclerentsheet.createRow(vehiclerentRowNum++);
+
+            row.createCell(0)
+                    .setCellValue(vehicleRent.getRentStartDate().toString());
+
+            row.createCell(1)
+                    .setCellValue(vehicleRent.getRentEndDate().toString());
+
+            row.createCell(2)
+                    .setCellValue(vehicleRent.getRentedDays());
+
+            row.createCell(3)
+                    .setCellValue(vehicleRent.getVehicleName());
+
+            row.createCell(4)
+                    .setCellValue(vehicleRent.getVehicleType().toString());
+
+            row.createCell(5)
+                    .setCellValue(vehicleRent.getNoOfKmDrived());
+
+            row.createCell(6)
+                    .setCellValue(vehicleRent.getTotalFare());
+
+        }
+
+
+    }
 }
