@@ -294,6 +294,8 @@ public class ExcelWriter {
 
             row.createCell(3)
                     .setCellValue(customer.getGender().toString());
+
+
         }
     }
 }
