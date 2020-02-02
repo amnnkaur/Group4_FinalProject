@@ -277,5 +277,23 @@ public class ExcelWriter {
 
         CellStyle vehiclerentDateCellStyle = workbook.createCellStyle();
         vehiclerentDateCellStyle.setDataFormat(driverCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+
+// Create Other rows and cells with employees data
+        int rowNum = 1;
+        for (Customer customer : customers) {
+            Row row = sheet.createRow(rowNum++);
+
+            row.createCell(0)
+                    .setCellValue(customer.getId());
+
+            row.createCell(1)
+                    .setCellValue(customer.getFirstName());
+
+            row.createCell(2)
+                    .setCellValue(customer.getLastName());
+
+            row.createCell(3)
+                    .setCellValue(customer.getGender().toString());
+        }
     }
 }
