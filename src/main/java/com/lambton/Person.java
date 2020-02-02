@@ -136,9 +136,11 @@ public abstract class Person {
            return password;
        }*/
 
-    public char[] getPassword() {
-        char[] encryptedPassword = password.toCharArray();
-        return encryptedPassword;
+    public String getPassword() {
+        providedPassword = password;
+        salt = PasswordUtils.getSalt(30);
+        mySecurePassword = PasswordUtils.generateSecurePassword(providedPassword, salt);
+        return mySecurePassword;
     }
 
     public void setPassword(String password) {
