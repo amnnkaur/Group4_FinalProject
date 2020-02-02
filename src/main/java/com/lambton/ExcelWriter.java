@@ -20,7 +20,6 @@ public class ExcelWriter {
             "Insurance Name Provider", "No. of seats", "Fuel", "Base Rate", "Rate per Km", "Bus Type", "Accessibility", "Wifi Available"};
     private static String[] vehicleRentColumns = {"Rent Start Date", "Rent End Date", "Rented Days", "Vehicle",
             "Vehicle Type", "No.of Km Drived", "Total Bill"};
-
     private static List<Customer> customers = new ArrayList<>();
     private static List<Driver> drivers = new ArrayList<>();
     private static List<Owner> owners = new ArrayList<>();
