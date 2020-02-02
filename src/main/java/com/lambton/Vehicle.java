@@ -24,6 +24,7 @@ enum Type {
 
 public abstract class Vehicle {
     String str;
+    String prefixer;
     /*   static String key;
        static String value;
        static String hashMap;*/
@@ -48,6 +49,7 @@ public abstract class Vehicle {
                    boolean isInsured,
                    int noOfSeat, Fuel fuelType) {
         this.vehicleIdentificationNumber = vehicleIdentificationNumber;
+//        this.prefixer=prefixer();
         this.vehicleDescription = vehicleDescription;
         this.manufacturerName = manufacturerName;
 
@@ -76,7 +78,13 @@ public abstract class Vehicle {
         this.noOfSeat = noOfSeat;
         this.fuelType = fuelType;
 
-        this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
+  /*      this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
+                manufacturerName);*/
+    }
+
+    public void setHashmap(){
+//        this.prefixer=prefixer();
+        this.vehicleList.put(String.valueOf(prefixer()),
                 manufacturerName);
     }
 
@@ -244,7 +252,11 @@ public abstract class Vehicle {
         return str;
     }
 
+
+
     public void printData() {
+        setHashmap();
+
         System.out.println("Vehicle Identification Number: " + prefixer());
         System.out.println("Vehicle Description: " + getVehicleDescription());
         System.out.println("Manufacturer Name: " + getManufacturerName());

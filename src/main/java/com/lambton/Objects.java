@@ -42,8 +42,8 @@ public class Objects {
         Bus b2=new Bus(4,"Here only",
                 "Volvo",true,false,7,Fuel.Electric,
                 BusType.MiniCoach,true,true);
-        Bus b1=new Bus(5,"Here only",
-                "Volvo",true,false,7,Fuel.Electric,
+        Bus b1=new Bus(4,"Here only",
+                "Volv5",true,false,7,Fuel.Electric,
                 BusType.MiniCoach,true,true);
         b1.printData();
 
