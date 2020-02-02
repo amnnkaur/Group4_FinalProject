@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+
 public class ExcelWriter {
 
     private static String[] columns = {"ID", "First Name", "Last Name", "Gender", "DOB", "Mobile no.", "Email",
@@ -114,6 +115,7 @@ public class ExcelWriter {
                 "6723367", "me@me.com", "Caria", "ghat",
                 "Eimbee", "2989624526", "auda.org.au", 2));
 
+
     }
 
     static {
@@ -167,5 +169,6 @@ public class ExcelWriter {
         vehiclesrents.add(new VehicleRent(LocalDate.of(2020,01,15),
                 LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,11458,15.25f));
     }
+
 
 }
