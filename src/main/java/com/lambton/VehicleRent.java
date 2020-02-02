@@ -113,8 +113,8 @@ public class VehicleRent {
         System.out.println("Rented No. of days: " + getRentedDays());
         System.out.println("Vehicle: " + getVehicleName());
         System.out.println("Vehicle Type: " + getVehicleType());
-        System.out.println("No. of Km. drived: " + getNoOfKmDrived());
-        System.out.println("Total bill to pay: " + getTotalFare());
+        System.out.println("No. of Km. drived: " + getNoOfKmDrived()+"km");
+        System.out.println("Total bill to pay: $" + getTotalFare());
     }
 }
 
