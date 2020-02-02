@@ -21,12 +21,15 @@ public abstract class Person {
     String firstName;
     String lastName;
     Gender gender;
-    Date birthDate;
-    int age;
+    static Date birthDate;
+    static int age;
     String mobileNumber;
     String emailId;
     String userName;
     String password;
+    String providedPassword;
+    String mySecurePassword;
+    String salt;
 
     String str;
     static String[] months = new String[]{"null",
@@ -128,9 +131,11 @@ public abstract class Person {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    public String getOriginalPassword(){
-        return password;
-    }
+
+    /*  public String getOriginalPassword(){
+           return password;
+       }*/
+
     public char[] getPassword() {
         char[] encryptedPassword = password.toCharArray();
         return encryptedPassword;
@@ -159,7 +164,7 @@ public abstract class Person {
         System.out.println("Age: " + getAge() + " years");
         System.out.println("User name: " + getUserName());
         System.out.println("Password: " + getPassword());
-        System.out.println("Original password: " +getOriginalPassword());
+       // System.out.println("Original password: " +getOriginalPassword());
     }
 
 
