@@ -259,5 +259,8 @@ public class ExcelWriter {
         // Create Cell Style for formatting Date
         CellStyle dateCellStyle = workbook.createCellStyle();
         dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+
+        CellStyle driverDateCellStyle = workbook.createCellStyle();
+        driverDateCellStyle.setDataFormat(driverCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
     }
 }
