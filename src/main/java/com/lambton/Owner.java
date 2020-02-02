@@ -1,21 +1,29 @@
 package com.lambton;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class Owner extends Person {
 
     String companyTitle;
     String officeNumber;
     String website;
-    String[] vehicleListOwned;
+    //    String[] vehicleListOwned;
+    Scanner in=new Scanner(System.in);
+    int count;
+    int vehicleId;
+    String valueFromMap = null;
+    HashMap<Integer, HashMap<String,String>>ownedVehicle=new HashMap<>();
 
     public Owner(int id, String firstName, String lastName, Gender gender, Date birthDate,
                  String mobileNumber, String emailId, String userName, String password,
-                 String companyTitle, String officeNumber, String website) {
+                 String companyTitle, String officeNumber, String website, int count) {
         super(id, firstName, lastName, gender, birthDate, mobileNumber, emailId, userName, password);
         this.companyTitle = companyTitle;
         this.officeNumber = officeNumber;
         this.website = website;
+
     }
 
     public String[] getVehicleListOwned() {
