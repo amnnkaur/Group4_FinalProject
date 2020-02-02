@@ -113,6 +113,17 @@ public class ExcelWriter {
                 "6723367", "me@me.com", "Caria", "ghat",
                 "Eimbee", "2989624526", "auda.org.au", 2));
 
+    }
+
+    static {
+        cars.add(new Car(11236, "New Car", "Ford",
+                true, false, 4, Fuel.Electric, CarType.Sedan, "Blue"));
+
+        cars.add(new Car(11236, "New Car", "Ford",
+                true, false, 4, Fuel.Electric, CarType.Sedan, "Blue"));
+
+        cars.add(new Car(11236, "New Car", "Ford",
+                true, false, 4, Fuel.Electric, CarType.Sedan, "Blue"));
 
     }
 
