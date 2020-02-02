@@ -319,8 +319,8 @@ public class ExcelWriter {
 
             row.createCell(11)
                     .setCellValue(customer.getCity());
-
         }
+
         int driverRowNum = 1;
         for (Driver driver : drivers) {
             Row row = driversheet.createRow(driverRowNum++);
@@ -366,7 +366,6 @@ public class ExcelWriter {
                     .setCellValue(driver.isDrivingHistoryCleared());
             row.createCell(13)
                     .setCellValue(driver.getSalary());
-
         }
         int ownerRowNum = 1;
         for (Owner owner : owners) {
@@ -414,7 +413,6 @@ public class ExcelWriter {
             row.createCell(13)
                     .setCellValue(owner.getWebsite());
         }
-
         int carRowNum = 1;
         for (Car car : cars) {
             Row row = carsheet.createRow(carRowNum++);
@@ -501,6 +499,7 @@ public class ExcelWriter {
             row.createCell(12)
                     .setCellValue(motorcycle.getMilage());
         }
+
         int busRowNum = 1;
         for (Bus bus : buses) {
             Row row = bussheet.createRow(busRowNum++);
@@ -547,7 +546,6 @@ public class ExcelWriter {
             row.createCell(13)
                     .setCellValue(bus.isWifiAvailable());
         }
-
         int vehiclerentRowNum = 1;
         for (VehicleRent vehicleRent : vehiclesrents) {
             Row row = vehiclerentsheet.createRow(vehiclerentRowNum++);
@@ -574,6 +572,7 @@ public class ExcelWriter {
                     .setCellValue(vehicleRent.getTotalFare());
 
         }
+
 
 // Resize all columns to fit the content size
         for (int i = 0; i < columns.length; i++) {
