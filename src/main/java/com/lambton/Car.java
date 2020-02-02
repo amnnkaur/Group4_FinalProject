@@ -19,11 +19,10 @@ public class Car extends Vehicle {
                boolean isSelfDrive/*, String driver*/, boolean isInsured,/* String insuranceNameProvider,*/
                int noOfSeat, Fuel fuelType,/* Type vehicleType, int baseRate, int ratePerKm,*/
                CarType carType, String carColor) {
-
         super(vehicleIdentificationNumber, vehicleDescription, manufacturerName,
                 isSelfDrive, /*driver,*/ isInsured, /*insuranceNameProvider,*/
                 noOfSeat, fuelType/*, vehicleType, baseRate, ratePerKm*/);
-        super.vehicleType=Type.Car;
+        super.vehicleType = Type.Car;
         this.carType = carType;
         this.carColor = carColor;
     }
@@ -44,19 +43,12 @@ public class Car extends Vehicle {
         this.carColor = carColor;
     }
 
-/*    public String prefixer() {
-        str = new String(String.valueOf(prefixers.CAR) + "_");
-        str = str.concat(String.valueOf(vehicleIdentificationNumber));
-        return str;
-    }*/
 
     @Override
     public void printData() {
-        System.out.println("Vehicle Identification Number: "+ prefixer());
         super.printData();
-        System.out.println("Car Type: "+ getCarType());
-        System.out.println("Car Color: "+ getCarColor());
-//        System.out.println("Vehicle List: "+getVehicleList());
+        System.out.println("Car Type: " + getCarType());
+        System.out.println("Car Color: " + getCarColor());
         System.out.println();
     }
 }

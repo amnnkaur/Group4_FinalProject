@@ -23,11 +23,12 @@ enum Type {
 }
 
 public abstract class Vehicle {
-    String str;
+    static String str;
+    String prefixer;
     /*   static String key;
        static String value;
        static String hashMap;*/
-    long vehicleIdentificationNumber;
+    static long vehicleIdentificationNumber;
     String vehicleDescription;
     String manufacturerName;
     boolean isSelfDrive;
@@ -36,10 +37,11 @@ public abstract class Vehicle {
     String insuranceNameProvider;
     int noOfSeat;
     Fuel fuelType;
-    Type vehicleType;
+    static Type vehicleType;
     int baseRate;
     int ratePerKm;
     static HashMap<String, String> vehicleList = new HashMap<>();
+    static HashMap<String,Type> type=new HashMap<>();
 
     public Vehicle(long vehicleIdentificationNumber,
                    String vehicleDescription,
@@ -49,8 +51,6 @@ public abstract class Vehicle {
                    int noOfSeat, Fuel fuelType) {
         this.vehicleIdentificationNumber = vehicleIdentificationNumber;
         this.vehicleDescription = vehicleDescription;
-        this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
-                manufacturerName);
         this.manufacturerName = manufacturerName;
         this.isSelfDrive = isSelfDrive;
         if (isSelfDrive == false) {
@@ -70,14 +70,42 @@ public abstract class Vehicle {
         } else {
             this.insuranceNameProvider = null;
         }
-
         this.noOfSeat = noOfSeat;
         this.fuelType = fuelType;
+        this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
+                manufacturerName);
+//        this.type.put(String.valueOf(vehicleIdentificationNumber),vehicleType);
 
     }
 
+  /*  public static HashMap<String, Type> getType() {
+        System.out.println("Vehicle Type List: ");
+        for (Map.Entry<String, Type> entry : type.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
+        return null;
+    }*/
+
+/*    public static void setType(HashMap<String, Type> type) {
+        Vehicle.type = type;
+    }*/
+    /*    public void setHashmap() {
+//        this.prefixer=prefixer();
+        this.vehicleList.put(String.valueOf(prefixer()),
+                manufacturerName);
+    }*/
+
+    public void setVehicleList(HashMap<String, String> vehicleList) {
+//        prefixer();
+//        this.vehicleList.put(prefixer(),manufacturerName);
+    }
+
     public static HashMap<String, String> getVehicleList() {
-        return vehicleList;
+        System.out.println("Vehicle List: ");
+        for (Map.Entry<String, String> entry : vehicleList.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
+        return null;
     }
 
     /*   public static String getVehicleList() {
@@ -90,17 +118,9 @@ public abstract class Vehicle {
         return hashMap;
     }*/
 
-    public void setVehicleList(HashMap<String, String> vehicleList) {
-        this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
-                manufacturerName);
-    }
 
     public Type getVehicleType() {
         return vehicleType;
-    }
-
-    public void setVehicleType(Type vehicleType) {
-        this.vehicleType = vehicleType;
     }
 
     public long getVehicleIdentificationNumber() {
@@ -215,20 +235,20 @@ public abstract class Vehicle {
         return ratePerKm;
     }
 
-    public String prefixer() {
+    public static String prefixer() {
         switch (vehicleType) {
             case Car: {
-                str = new String(String.valueOf(prefixers.CAR) + "_");
+                str = new String(String.valueOf(prefixers.CAR+"_"));
                 str = str.concat(String.valueOf(vehicleIdentificationNumber));
                 break;
             }
             case Motorcycle: {
-                str = new String(String.valueOf(prefixers.MOT) + "_");
+                str = new String(String.valueOf(prefixers.MOT+"_"));
                 str = str.concat(String.valueOf(vehicleIdentificationNumber));
                 break;
             }
             case Bus: {
-                str = new String(String.valueOf(prefixers.BUS) + "_");
+                str = new String(String.valueOf(prefixers.BUS+"_"));
                 str = str.concat(String.valueOf(vehicleIdentificationNumber));
                 break;
             }
@@ -239,8 +259,11 @@ public abstract class Vehicle {
         return str;
     }
 
+
     public void printData() {
-//        System.out.println("VIN: " + getVehicleIdentificationNumber());
+//        setHashmap();
+
+        System.out.println("Vehicle Identification Number: " + prefixer());
         System.out.println("Vehicle Description: " + getVehicleDescription());
         System.out.println("Manufacturer Name: " + getManufacturerName());
         System.out.println("Self Drive: " + isSelfDrive());

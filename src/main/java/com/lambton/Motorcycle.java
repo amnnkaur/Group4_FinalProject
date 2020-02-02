@@ -11,7 +11,7 @@ public class Motorcycle extends Vehicle {
                       double topSpeed, double milage) {
         super(vehicleIdentificationNumber, vehicleDescription, manufacturerName,
                 isSelfDrive, isInsured, noOfSeat, fuelType);
-        super.vehicleType=Type.Motorcycle;
+        super.vehicleType = Type.Motorcycle;
         this.topSpeed = topSpeed;
         this.milage = milage;
 
@@ -33,20 +33,12 @@ public class Motorcycle extends Vehicle {
         this.milage = milage;
     }
 
-/*
-    public String prefixer() {
-        str = new String(String.valueOf(prefixers.MOT) + "_");
-        str = str.concat(String.valueOf(vehicleIdentificationNumber));
-        return str;
-    }
-*/
 
     @Override
     public void printData() {
-        System.out.println("Vehicle Identification Number: "+ prefixer());
         super.printData();
-        System.out.println("Top Speed: "+getTopSpeed());
-        System.out.println("Mileage: "+getMilage());
+        System.out.println("Top Speed: " + getTopSpeed());
+        System.out.println("Mileage: " + getMilage());
         System.out.println();
     }
 }
