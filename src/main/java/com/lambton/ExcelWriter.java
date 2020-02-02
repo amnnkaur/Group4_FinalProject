@@ -96,4 +96,24 @@ public class ExcelWriter {
 
     }
 
+    static {
+        Calendar dateOfBirth = Calendar.getInstance();
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        owners.add(new Owner(111, "Caria", "MacNamee", Gender.Female, dateOfBirth.getTime(),
+                "6723367", "me@me.com", "Caria", "ghat",
+                "Eimbee", "2989624526", "auda.org.au", 2));
+
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        owners.add(new Owner(111, "Caria", "MacNamee", Gender.Female, dateOfBirth.getTime(),
+                "6723367", "me@me.com", "Caria", "ghat",
+                "Eimbee", "2989624526", "auda.org.au", 2));
+
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        owners.add(new Owner(111, "Caria", "MacNamee", Gender.Female, dateOfBirth.getTime(),
+                "6723367", "me@me.com", "Caria", "ghat",
+                "Eimbee", "2989624526", "auda.org.au", 2));
+
+
+    }
+
 }
