@@ -132,9 +132,10 @@ public abstract class Person {
         this.userName = userName;
     }
 
-    /*  public String getOriginalPassword(){
-           return password;
-       }*/
+    public String getOriginalPassword() {
+        VerifyProvidedPassword(providedPassword, mySecurePassword, salt);
+        return password;
+    }
 
     public String getPassword() {
         providedPassword = password;
@@ -142,6 +143,7 @@ public abstract class Person {
         mySecurePassword = PasswordUtils.generateSecurePassword(providedPassword, salt);
         return mySecurePassword;
     }
+
 
     public void setPassword(String password) {
         this.password = password;
@@ -166,7 +168,7 @@ public abstract class Person {
         System.out.println("Age: " + getAge() + " years");
         System.out.println("User name: " + getUserName());
         System.out.println("Password: " + getPassword());
-       // System.out.println("Original password: " +getOriginalPassword());
+        System.out.println("Original password: " +getOriginalPassword());
     }
 
 
