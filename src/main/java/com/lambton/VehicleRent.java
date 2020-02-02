@@ -12,6 +12,7 @@ public class VehicleRent {
     LocalDate rentEndDate;
     long rentedDays;
     long vehicleId;
+    String vehicleName;
     float noOfKmDrived;
     float totalFare;
 
@@ -20,6 +21,18 @@ public class VehicleRent {
         this.rentEndDate = rentEndDate;
         this.vehicleId = vehicleId;
         this.noOfKmDrived = noOfKmDrived;
+    }
+
+    public String getVehicleName(){
+        if(Vehicle.vehicleList.containsKey(String.valueOf(vehicleId))){
+//            System.out.println("if block");
+            vehicleName=Vehicle.vehicleList.get(String.valueOf(vehicleId));
+        }
+        else{
+//            System.out.println("else block");
+            vehicleName="Invalid Vehicle Entry";
+        }
+        return vehicleName;
     }
 
     public LocalDate getRentStartDate() {
@@ -65,7 +78,7 @@ public class VehicleRent {
         System.out.println("Rent Start Date: " + getRentStartDate());
         System.out.println("Rent End Date: " + getRentEndDate());
         System.out.println("Rent in No. of days: " + getRentedDays());
-        System.out.println("Vehicle: "+ vehicleId);
+        System.out.println("Vehicle: "+ getVehicleName());
         System.out.println("No. of Km. drived: " + getNoOfKmDrived());
         System.out.println("Total bill to pay: " + getTotalFare());
     }
