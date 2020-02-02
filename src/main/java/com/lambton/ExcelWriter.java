@@ -340,7 +340,7 @@ public class ExcelWriter {
             Cell dateOfBirthCell = row.createCell(4);
             dateOfBirthCell.setCellValue(driver.getBirthDate());
             dateOfBirthCell.setCellStyle(dateCellStyle);
-            
+
             row.createCell(5)
                     .setCellValue(driver.getMobileNumber());
 
@@ -368,5 +368,21 @@ public class ExcelWriter {
                     .setCellValue(driver.getSalary());
 
         }
-    }
+        int ownerRowNum = 1;
+        for (Owner owner : owners) {
+            Row row = ownersheet.createRow(ownerRowNum++);
+
+            row.createCell(0)
+                    .setCellValue(owner.getId());
+
+            row.createCell(1)
+                    .setCellValue(owner.getFirstName());
+
+            row.createCell(2)
+                    .setCellValue(owner.getLastName());
+
+            row.createCell(3)
+                    .setCellValue(owner.getGender().toString());
+        }
+        }
 }
