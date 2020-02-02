@@ -387,6 +387,32 @@ public class ExcelWriter {
             Cell dateOfBirthCell = row.createCell(4);
             dateOfBirthCell.setCellValue(owner.getBirthDate());
             dateOfBirthCell.setCellStyle(dateCellStyle);
+
+            row.createCell(5)
+                    .setCellValue(owner.getMobileNumber());
+
+            row.createCell(6)
+                    .setCellValue(Person.age);
+
+            row.createCell(7)
+                    .setCellValue(owner.getEmailId());
+
+            row.createCell(8)
+                    .setCellValue(owner.getUserName());
+
+            row.createCell(9)
+                    .setCellValue(owner.getPassword());
+
+            row.createCell(10)
+                    .setCellValue(owner.getOriginalPassword());
+
+            row.createCell(11)
+                    .setCellValue(owner.getCompanyTitle());
+
+            row.createCell(12)
+                    .setCellValue(owner.getOfficeNumber());
+            row.createCell(13)
+                    .setCellValue(owner.getWebsite());
         }
         }
 }
