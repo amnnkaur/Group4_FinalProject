@@ -40,8 +40,7 @@ public class VehicleRent {
     }
 
     public long getRentedDays() {
-     /*   rentedDays = Duration.between(LocalDate.of(getRentEndDate()),
-                LocalDate.of(getRentStartDate()));*/
+        rentedDays = getRentStartDate().until(getRentEndDate(),ChronoUnit.DAYS);
         return rentedDays;
     }
 
