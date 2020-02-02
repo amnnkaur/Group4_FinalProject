@@ -225,5 +225,10 @@ public class ExcelWriter {
             cell.setCellValue(columns[i]);
             cell.setCellStyle(headerCellStyle);
         }
+        for (int i = 0; i < driverColumns.length; i++) {
+            Cell driverCell = driverHeaderRow.createCell(i);
+            driverCell.setCellValue(driverColumns[i]);
+            driverCell.setCellStyle(headerCellStyle);
+        }
     }
 }
