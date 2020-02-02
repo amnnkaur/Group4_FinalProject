@@ -127,4 +127,19 @@ public class ExcelWriter {
 
     }
 
+    static {
+        motorcycles.add(new Motorcycle(11458,"Hashtag",
+                "Harley",true,false,2,Fuel.Petrol,
+                56.50d,15.10d));
+
+        motorcycles.add(new Motorcycle(11458,"Hashtag",
+                "Harley",true,false,2,Fuel.Petrol,
+                56.50d,15.10d));
+
+        motorcycles.add(new Motorcycle(11458,"Hashtag",
+                "Harley",true,false,2,Fuel.Petrol,
+                56.50d,15.10d));
+
+    }
+
 }
