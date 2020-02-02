@@ -23,14 +23,13 @@ public class VehicleRent {
         this.noOfKmDrived = noOfKmDrived;
     }
 
-    public String getVehicleName(){
-        if(Vehicle.vehicleList.containsKey(String.valueOf(vehicleId))){
+    public String getVehicleName() {
+        if (Vehicle.vehicleList.containsKey(String.valueOf(vehicleId))) {
 //            System.out.println("if block");
-            vehicleName=Vehicle.vehicleList.get(String.valueOf(vehicleId));
-        }
-        else{
+            vehicleName = Vehicle.vehicleList.get(String.valueOf(vehicleId));
+        } else {
 //            System.out.println("else block");
-            vehicleName="Invalid Vehicle Entry";
+            vehicleName = "Invalid Vehicle Entry";
         }
         return vehicleName;
     }
@@ -66,7 +65,23 @@ public class VehicleRent {
     }
 
     public float getTotalFare() {
-        totalFare=100*getRentedDays()+(getNoOfKmDrived()*5);
+        switch (Vehicle.vehicleType) {
+            case Car: {
+                totalFare = 100 * getRentedDays() + (getNoOfKmDrived() * 5);
+                break;
+            }
+            case Motorcycle: {
+                totalFare = 50 * getRentedDays() + (getNoOfKmDrived() * 1);
+                break;
+            }
+            case Bus: {
+                totalFare = 250 * getRentedDays() + (getNoOfKmDrived() * 7);
+                break;
+            }
+            default:
+                totalFare = 0;
+                break;
+        }
         return totalFare;
     }
 
@@ -78,7 +93,7 @@ public class VehicleRent {
         System.out.println("Rent Start Date: " + getRentStartDate());
         System.out.println("Rent End Date: " + getRentEndDate());
         System.out.println("Rent in No. of days: " + getRentedDays());
-        System.out.println("Vehicle: "+ getVehicleName());
+        System.out.println("Vehicle: " + getVehicleName());
         System.out.println("No. of Km. drived: " + getNoOfKmDrived());
         System.out.println("Total bill to pay: " + getTotalFare());
     }

@@ -36,7 +36,7 @@ public abstract class Vehicle {
     String insuranceNameProvider;
     int noOfSeat;
     Fuel fuelType;
-    Type vehicleType;
+    static Type vehicleType;
     int baseRate;
     int ratePerKm;
     static HashMap<String, String> vehicleList = new HashMap<>();
@@ -86,7 +86,7 @@ public abstract class Vehicle {
     }
 
     public static HashMap<String, String> getVehicleList() {
-        System.out.println("VehicleList: ");
+        System.out.println("Vehicle List: ");
         for (Map.Entry<String, String> entry : vehicleList.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
         }
