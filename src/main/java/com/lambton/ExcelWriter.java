@@ -255,5 +255,9 @@ public class ExcelWriter {
             vehiclerentCell.setCellValue(vehicleRentColumns[i]);
             vehiclerentCell.setCellStyle(headerCellStyle);
         }
+
+        // Create Cell Style for formatting Date
+        CellStyle dateCellStyle = workbook.createCellStyle();
+        dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd-MM-yyyy"));
     }
 }
