@@ -41,6 +41,7 @@ public abstract class Vehicle {
     int baseRate;
     int ratePerKm;
     static HashMap<String, String> vehicleList = new HashMap<>();
+    static HashMap<String,Type> type=new HashMap<>();
 
     public Vehicle(long vehicleIdentificationNumber,
                    String vehicleDescription,
@@ -73,10 +74,22 @@ public abstract class Vehicle {
         this.fuelType = fuelType;
         this.vehicleList.put(String.valueOf(vehicleIdentificationNumber),
                 manufacturerName);
+//        this.type.put(String.valueOf(vehicleIdentificationNumber),vehicleType);
 
     }
 
-/*    public void setHashmap() {
+  /*  public static HashMap<String, Type> getType() {
+        System.out.println("Vehicle Type List: ");
+        for (Map.Entry<String, Type> entry : type.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
+        return null;
+    }*/
+
+/*    public static void setType(HashMap<String, Type> type) {
+        Vehicle.type = type;
+    }*/
+    /*    public void setHashmap() {
 //        this.prefixer=prefixer();
         this.vehicleList.put(String.valueOf(prefixer()),
                 manufacturerName);
