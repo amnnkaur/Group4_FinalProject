@@ -42,6 +42,30 @@ public class ExcelWriter {
                 dateOfBirth.getTime(),
                 "9547562145", "aman@aman.com",
                 "Me_AmanKaur", "458954hgtfr", "New York", "USA"));
+
+        dateOfBirth.set(1997, Calendar.JANUARY, 15);
+        customers.add(new Customer(11546, "Inshant", "Tageja", Gender.Male,
+                dateOfBirth.getTime(),
+                "8945754621", "me_inshant@me.com",
+                "Me_inshant", "inshant", "Scarbraough", "Toronto"));
+
+        dateOfBirth.set(1997, Calendar.JUNE, 21);
+        customers.add(new Customer(11575, "Monica", "Sharma", Gender.Female,
+                dateOfBirth.getTime(),
+                "985475412", "meMonica@me.com",
+                "Me_Monica", "5485lkjhy", "Surrey", "Vancouver"));
+
+        dateOfBirth.set(1995, Calendar.AUGUST, 01);
+        customers.add(new Customer(11563, "Ikroop", "Grewal", Gender.Female,
+                dateOfBirth.getTime(),
+                "956482135", "me_ikroop@me.com",
+                "Ikroop_Virk", "virkikroop", "New York", "USA"));
+
+        dateOfBirth.set(1997, Calendar.MAY, 17);
+        customers.add(new Customer(11557, "Kritima", " ", Gender.Female,
+                dateOfBirth.getTime(),
+                "8754632159", "me_kritima@me.com",
+                "Me_kritima", "5475lkmnj", "Brampton", "Toronto"));
     }
 
 }
