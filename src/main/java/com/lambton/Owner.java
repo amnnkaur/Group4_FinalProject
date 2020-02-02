@@ -102,7 +102,9 @@ public class Owner extends Person {
         System.out.println("Company Title: " + getCompanyTitle());
         System.out.println("Business Landline Number: " + getOfficeNumber());
         System.out.println("Website: " + getWebsite());
-       // getVehicleListOwned();
+   /*     System.out.println("Vehicles Owned: "+count);
+        System.out.println("value "+ valueFromMap );*/
+//        getVehicleListOwned();
         System.out.println();
     }
 }
