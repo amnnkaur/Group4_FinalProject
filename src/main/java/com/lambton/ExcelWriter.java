@@ -190,5 +190,14 @@ public class ExcelWriter {
         CreationHelper motorcycleCreateHelper = workbook.getCreationHelper();//motorcycle
         CreationHelper busCreateHelper = workbook.getCreationHelper();//bus
         CreationHelper vehicleRentCreateHelper = workbook.getCreationHelper();//vehicleRent
+
+        // Create Sheets
+        Sheet sheet = workbook.createSheet("Customer");
+        Sheet driversheet = workbook.createSheet("Driver");//driver
+        Sheet ownersheet = workbook.createSheet("Owner");//owner
+        Sheet carsheet = workbook.createSheet("Car");//car
+        Sheet motorcyclesheet = workbook.createSheet("Motorcycle");//motorcycle
+        Sheet bussheet = workbook.createSheet("Bus");//bus
+        Sheet vehiclerentsheet = workbook.createSheet("Vehicle Rent");//Vehicle Rent
     }
 }
