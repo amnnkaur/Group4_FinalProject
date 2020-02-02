@@ -4,6 +4,7 @@ import com.sun.media.sound.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -596,5 +597,9 @@ public class ExcelWriter {
         for (int i = 0; i < vehicleRentColumns.length; i++) {
             vehiclerentsheet.autoSizeColumn(i);
         }
+
+        // Write the output to a file
+        FileOutputStream fileOut = new FileOutputStream("Car_Rental_System.xlsx");
+        workbook.write(fileOut);
     }
 }
