@@ -1,5 +1,6 @@
 package com.lambton;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Objects {
@@ -50,5 +51,9 @@ public class Objects {
 
 
         System.out.println(/*"Vehicle List: "+*/Vehicle.getVehicleList());
+
+        VehicleRent vr1=new VehicleRent(LocalDate.of(2020,01,15),
+                LocalDate.of(2020,01,25),1,15.25f);
+        vr1.printData();
     }
 }
