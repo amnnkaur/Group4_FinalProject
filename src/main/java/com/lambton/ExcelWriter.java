@@ -319,7 +319,23 @@ public class ExcelWriter {
 
             row.createCell(11)
                     .setCellValue(customer.getCity());
-        
+
+        }
+        int driverRowNum = 1;
+        for (Driver driver : drivers) {
+            Row row = driversheet.createRow(driverRowNum++);
+
+            row.createCell(0)
+                    .setCellValue(driver.getId());
+
+            row.createCell(1)
+                    .setCellValue(driver.getFirstName());
+
+            row.createCell(2)
+                    .setCellValue(driver.getLastName());
+
+            row.createCell(3)
+                    .setCellValue(driver.getGender().toString());
         }
     }
 }
