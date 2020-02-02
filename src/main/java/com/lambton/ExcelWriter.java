@@ -1,6 +1,8 @@
 package com.lambton;
 
 import com.sun.media.sound.InvalidFormatException;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -181,5 +183,12 @@ public class ExcelWriter {
         /* CreationHelper helps us create instances of various things like DataFormat,
            Hyperlink, RichTextString etc, in a format (HSSF, XSSF) independent way */
         CreationHelper createHelper = workbook.getCreationHelper();
+
+        CreationHelper driverCreateHelper = workbook.getCreationHelper();//driver
+        CreationHelper ownerCreateHelper = workbook.getCreationHelper();//owner
+        CreationHelper carCreateHelper = workbook.getCreationHelper();//car
+        CreationHelper motorcycleCreateHelper = workbook.getCreationHelper();//motorcycle
+        CreationHelper busCreateHelper = workbook.getCreationHelper();//bus
+        CreationHelper vehicleRentCreateHelper = workbook.getCreationHelper();//vehicleRent
     }
 }
