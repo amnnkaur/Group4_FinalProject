@@ -12,7 +12,6 @@ public class VehicleRent {
     LocalDate rentEndDate;
     long rentedDays;
     long vehicleId;
-    //    static HashMap<String, String> vehicle = new HashMap<>();
     float noOfKmDrived;
     float totalFare;
 
@@ -40,21 +39,10 @@ public class VehicleRent {
     }
 
     public long getRentedDays() {
-        rentedDays = getRentStartDate().until(getRentEndDate(),ChronoUnit.DAYS);
+        rentedDays = getRentStartDate().until(getRentEndDate(), ChronoUnit.DAYS);
         return rentedDays;
     }
 
-/*    public void setRentedDays(int rentedDays) {
-        this.rentedDays = rentedDays;
-    }*/
-
-/*    public static HashMap<String, String> getVehicle() {
-        return vehicle;
-    }
-
-    public static void setVehicle(HashMap<String, String> vehicle) {
-        VehicleRent.vehicle = vehicle;
-    }*/
 
     public float getNoOfKmDrived() {
         return noOfKmDrived;
@@ -65,6 +53,7 @@ public class VehicleRent {
     }
 
     public float getTotalFare() {
+        totalFare=100*getRentedDays()+(getNoOfKmDrived()*5);
         return totalFare;
     }
 
@@ -76,7 +65,7 @@ public class VehicleRent {
         System.out.println("Rent Start Date: " + getRentStartDate());
         System.out.println("Rent End Date: " + getRentEndDate());
         System.out.println("Rent in No. of days: " + getRentedDays());
-        System.out.println("Vehicle: ");
+        System.out.println("Vehicle: "+ vehicleId);
         System.out.println("No. of Km. drived: " + getNoOfKmDrived());
         System.out.println("Total bill to pay: " + getTotalFare());
     }
