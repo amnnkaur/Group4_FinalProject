@@ -272,5 +272,7 @@ public class ExcelWriter {
         CellStyle motorcycleDateCellStyle = workbook.createCellStyle();
         motorcycleDateCellStyle.setDataFormat(driverCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
 
+        CellStyle busDateCellStyle = workbook.createCellStyle();
+        busDateCellStyle.setDataFormat(driverCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
     }
 }
