@@ -1,5 +1,8 @@
 package com.lambton;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ExcelWriter {
 
     private static String[] columns = {"ID", "First Name", "Last Name", "Gender", "DOB", "Mobile no.", "Email",
@@ -16,5 +19,13 @@ public class ExcelWriter {
             "Insurance Name Provider", "No. of seats", "Fuel", "Base Rate", "Rate per Km", "Bus Type", "Accessibility", "Wifi Available"};
     private static String[] vehicleRentColumns = {"Rent Start Date", "Rent End Date", "Rented Days", "Vehicle",
             "Vehicle Type", "No.of Km Drived", "Total Bill"};
+
+    private static List<Customer> customers = new ArrayList<>();
+    private static List<Driver> drivers = new ArrayList<>();
+    private static List<Owner> owners = new ArrayList<>();
+    private static List<Car> cars = new ArrayList<>();
+    private static List<Motorcycle> motorcycles = new ArrayList<>();
+    private static List<Bus> buses = new ArrayList<>();
+    private static List<VehicleRent> vehiclesrents = new ArrayList<>();
 
 }
