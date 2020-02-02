@@ -336,6 +336,11 @@ public class ExcelWriter {
 
             row.createCell(3)
                     .setCellValue(driver.getGender().toString());
+            
+            Cell dateOfBirthCell = row.createCell(4);
+            dateOfBirthCell.setCellValue(driver.getBirthDate());
+            dateOfBirthCell.setCellStyle(dateCellStyle);
+
         }
     }
 }
