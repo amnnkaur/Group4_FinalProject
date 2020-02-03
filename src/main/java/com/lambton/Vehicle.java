@@ -37,7 +37,7 @@ public abstract class Vehicle implements IDisplay {
     String insuranceNameProvider;
     int noOfSeat;
     Fuel fuelType;
-    static Type vehicleType;
+    Type vehicleType;
     int baseRate;
     int ratePerKm;
     static HashMap<String, String> vehicleList = new HashMap<>();

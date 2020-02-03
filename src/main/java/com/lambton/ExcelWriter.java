@@ -85,38 +85,38 @@ public class ExcelWriter {
                 "9856475452", "raman@kumar.com", "KumarShanu",
                 "kjhujh", 456854, true, 5445.00f));
 
-        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        dateOfBirth.set(1977, Calendar.DECEMBER, 17);
         drivers.add(new Driver(12271, "Michael", "Jordan", Gender.Male, dateOfBirth.getTime(),
                 "6544875984", "micheal@jordan.com", "Jordan_Micheal",
                 "dfgtre3", 854787, false, 2045.15f));
 
-        dateOfBirth.set(2001, Calendar.NOVEMBER, 01);
+        dateOfBirth.set(2001, Calendar.FEBRUARY, 14);
         drivers.add(new Driver(12236, "Michelle", "Rai", Gender.Female, dateOfBirth.getTime(),
                 "8547256318", "michelle@gmail.com", "michelle",
                 "1254gytr", 169754, false, 1145.05f));
 
-        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        dateOfBirth.set(1985, Calendar.AUGUST, 20);
         drivers.add(new Driver(12451, "Sherin", "Gupta", Gender.Female, dateOfBirth.getTime(),
                 "98564748572", "gupSherin@yahoo.com", "SherinG",
                 "524plo;", 233256, true, 998.40f));
 
-        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        dateOfBirth.set(1965, Calendar.JUNE, 30);
         drivers.add(new Driver(12781, "Rakesh", "Jain", Gender.Male, dateOfBirth.getTime(),
                 "9852395452", "jainbhai@gmail.com", "JainSaab",
                 "ppo;;lko", 115897, true, 840.15f));
 
 //        Calendar dateOfBirth = Calendar.getInstance();
-        dateOfBirth.set(1981, Calendar.NOVEMBER, 01);
+        dateOfBirth.set(1981, Calendar.SEPTEMBER, 13);
         owners.add(new Owner(13981, "Caria", "MacNamee", Gender.Female, dateOfBirth.getTime(),
                 "6723367567", "me@me.com", "Caria", "ghat",
                 "Eimbee", "2989624526", "auda.org.au", 2));
 
-        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        dateOfBirth.set(1977, Calendar.MAY, 06);
         owners.add(new Owner(13657, "Gillingum", "Road", Gender.Male, dateOfBirth.getTime(),
                 "6892145763", "gillingum@gillingum.com", "Road", "dhobi_ghat",
                 "Officials", "2471596587", "officials.org.au", 5));
 
-        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        dateOfBirth.set(1981, Calendar.APRIL, 01);
         owners.add(new Owner(13215, "Careem", "Nazi", Gender.Female, dateOfBirth.getTime(),
                 "9988456321", "careem@me.com", "Careem", "Gaziattack",
                 "DCompany", "2985421526", "ComapnyD.org.au", 3));

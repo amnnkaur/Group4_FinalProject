@@ -21,7 +21,7 @@ public abstract class Person implements IDisplay {
     String firstName;
     String lastName;
     Gender gender;
-    static Date birthDate;
+    Date birthDate;
     static int age;
     String mobileNumber;
     String emailId;
@@ -161,7 +161,7 @@ public abstract class Person implements IDisplay {
         this.password = password;
     }
 
-    public static int getAge() {
+    public int getAge() {
         LocalDate today = LocalDate.now();
         age = today.getYear() - birthDate.getYear();
         return age;
