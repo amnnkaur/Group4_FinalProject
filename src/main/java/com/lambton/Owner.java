@@ -23,6 +23,7 @@ public class Owner extends Person implements IDisplay {
         this.companyTitle = companyTitle;
         this.officeNumber = officeNumber;
         this.website = website;
+        this.count=count;
        /* this.count=count;
         for(int i=0;i<count;i++){
         this.vehicleId=in.nextInt();
@@ -34,6 +35,8 @@ public class Owner extends Person implements IDisplay {
         }
 //        this.ownedVehicle.put(id,Vehicle.vehicleList.get(vehicleId));*/
     }
+
+
 
     public HashMap<Integer, HashMap<String, String>> getOwnedVehicle() {
         System.out.println("Owned Vehicle List: ");

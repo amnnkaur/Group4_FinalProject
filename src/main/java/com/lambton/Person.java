@@ -161,7 +161,7 @@ public abstract class Person implements IDisplay {
         this.password = password;
     }
 
-    private static int getAge() {
+    public static int getAge() {
         LocalDate today = LocalDate.now();
         age = today.getYear() - birthDate.getYear();
         return age;

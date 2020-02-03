@@ -3,7 +3,7 @@ package com.lambton;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
+import java.time.LocalDate;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -18,7 +18,7 @@ public class ExcelWriter {
             "User Name", "Password", "Original Password", "Address", "City"};
     private static String[] driverColumns = {"ID", "First Name", "Last Name", "Gender", "DOB", "Mobile no.", "Age", "Email",
             "User Name", "Password", "Original Password", "Licence Number", "Driving History", "Salary"};
-    private static String[] ownerColumns = {"ID", "First Name", "Last Name", "Gender", "DOB", "Mobile no.", "Age", "Email",
+    private static String[] ownerColumns = {"ID", "First Name", "Last Name", "Gender", "DOB", "Mobile no.", "Email",
             "User Name", "Password", "Original Password", "Company Title", "Office Contact", "Website"};
     private static String[] carColumns = {"VIN", "Vehicle Description", "Manufacturer Name", "isSelfDrive", "Driver", "isInsured",
             "Insurance Name Provider", "No. of seats", "Fuel", "Car Type", "Color", "Base Rate", "Rate per Km"};
@@ -82,49 +82,49 @@ public class ExcelWriter {
 
     static {
         Calendar dateOfBirth = Calendar.getInstance();
-        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
-        drivers.add(new Driver(11265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
+        dateOfBirth.set(1997, Calendar.NOVEMBER, 01);
+        drivers.add(new Driver(12265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
                 "9856475452", "raman@kumar.com", "KumarShanu",
                 "kjhujh", 456854, true, 5445.00f));
 
         dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
-        drivers.add(new Driver(11265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
-                "9856475452", "raman@kumar.com", "KumarShanu",
-                "kjhujh", 456854, true, 5445.00f));
+        drivers.add(new Driver(12271, "Michael", "Jordan", Gender.Male, dateOfBirth.getTime(),
+                "6544875984", "micheal@jordan.com", "Jordan_Micheal",
+                "dfgtre3", 854787, false, 2045.15f));
+
+        dateOfBirth.set(2001, Calendar.NOVEMBER, 01);
+        drivers.add(new Driver(12236, "Michelle", "Rai", Gender.Female, dateOfBirth.getTime(),
+                "8547256318", "michelle@gmail.com", "michelle",
+                "1254gytr", 169754, false, 1145.05f));
 
         dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
-        drivers.add(new Driver(11265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
-                "9856475452", "raman@kumar.com", "KumarShanu",
-                "kjhujh", 456854, true, 5445.00f));
+        drivers.add(new Driver(12451, "Sherin", "Gupta", Gender.Female, dateOfBirth.getTime(),
+                "98564748572", "gupSherin@yahoo.com", "SherinG",
+                "524plo;", 233256, true, 998.40f));
 
         dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
-        drivers.add(new Driver(11265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
-                "9856475452", "raman@kumar.com", "KumarShanu",
-                "kjhujh", 456854, true, 5445.00f));
-
-        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
-        drivers.add(new Driver(11265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
-                "9856475452", "raman@kumar.com", "KumarShanu",
-                "kjhujh", 456854, true, 540.15f));
+        drivers.add(new Driver(12781, "Rakesh", "Jain", Gender.Male, dateOfBirth.getTime(),
+                "9852395452", "jainbhai@gmail.com", "JainSaab",
+                "ppo;;lko", 115897, true, 840.15f));
 
     }
 
     static {
         Calendar dateOfBirth = Calendar.getInstance();
-        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
-        owners.add(new Owner(111, "Caria", "MacNamee", Gender.Female, dateOfBirth.getTime(),
-                "6723367", "me@me.com", "Caria", "ghat",
+        dateOfBirth.set(1981, Calendar.NOVEMBER, 01);
+        owners.add(new Owner(13981, "Caria", "MacNamee", Gender.Female, dateOfBirth.getTime(),
+                "6723367567", "me@me.com", "Caria", "ghat",
                 "Eimbee", "2989624526", "auda.org.au", 2));
 
         dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
-        owners.add(new Owner(111, "Caria", "MacNamee", Gender.Female, dateOfBirth.getTime(),
-                "6723367", "me@me.com", "Caria", "ghat",
-                "Eimbee", "2989624526", "auda.org.au", 2));
+        owners.add(new Owner(13657, "Gillingum", "Road", Gender.Male, dateOfBirth.getTime(),
+                "6892145763", "gillingum@gillingum.com", "Road", "dhobi_ghat",
+                "Officials", "2471596587", "officials.org.au", 5));
 
         dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
-        owners.add(new Owner(111, "Caria", "MacNamee", Gender.Female, dateOfBirth.getTime(),
-                "6723367", "me@me.com", "Caria", "ghat",
-                "Eimbee", "2989624526", "auda.org.au", 2));
+        owners.add(new Owner(13215, "Careem", "Nazi", Gender.Female, dateOfBirth.getTime(),
+                "9988456321", "careem@me.com", "Careem", "Gaziattack",
+                "DCompany", "2985421526", "ComapnyD.org.au", 3));
 
 
     }
@@ -151,7 +151,7 @@ public class ExcelWriter {
                 56.50d,15.10d));
 
         motorcycles.add(new Motorcycle(11458,"Hashtag",
-                "Harley",true,false,2,Fuel.Petrol,
+                "Harley",true,false,2,Fuel.Electric,
                 56.50d,15.10d));
 
     }
@@ -166,7 +166,7 @@ public class ExcelWriter {
                 BusType.MiniCoach,true,true));
 
         buses.add(new Bus(11254,"Here only",
-                "Volvo",false,false,7,Fuel.Electric,
+                "Volvo",true,false,7,Fuel.Electric,
                 BusType.MiniCoach,true,true));
     }
 
@@ -368,7 +368,7 @@ public class ExcelWriter {
             row.createCell(12)
                     .setCellValue(driver.isDrivingHistoryCleared());
             row.createCell(13)
-                    .setCellValue(driver.getSalary());
+                    .setCellValue("$"+driver.getSalary());
         }
         int ownerRowNum = 1;
         for (Owner owner : owners) {
@@ -393,27 +393,27 @@ public class ExcelWriter {
             row.createCell(5)
                     .setCellValue(owner.getMobileNumber());
 
-            row.createCell(6)
-                    .setCellValue(Person.age);
+       /*     row.createCell(6)
+                    .setCellValue(Person.getAge());*/
 
-            row.createCell(7)
+            row.createCell(6)
                     .setCellValue(owner.getEmailId());
 
-            row.createCell(8)
+            row.createCell(7)
                     .setCellValue(owner.getUserName());
 
-            row.createCell(9)
+            row.createCell(8)
                     .setCellValue(owner.getPassword());
 
-            row.createCell(10)
+            row.createCell(9)
                     .setCellValue(owner.getOriginalPassword());
 
-            row.createCell(11)
+            row.createCell(10)
                     .setCellValue(owner.getCompanyTitle());
 
-            row.createCell(12)
+            row.createCell(11)
                     .setCellValue(owner.getOfficeNumber());
-            row.createCell(13)
+            row.createCell(12)
                     .setCellValue(owner.getWebsite());
         }
         int carRowNum = 1;
@@ -604,11 +604,9 @@ public class ExcelWriter {
         // Write the output to a file
         FileOutputStream fileOut = new FileOutputStream("Car_Rental_System.xlsx");
         workbook.write(fileOut);
-//        driverWorkbook.write(fileOut);//driver
         fileOut.close();
 
         // Closing the workbook
         workbook.close();
-//        driverWorkbook.close();//driver
     }
 }
