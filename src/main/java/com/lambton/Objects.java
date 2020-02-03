@@ -34,21 +34,21 @@ public class Objects {
         Car car2 = new Car(11278, "New Car",
                 "Ruther_Ford",
                 true, false, 4, Fuel.Electric, CarType.Sedan, "Blue");
-        car1.printData();
-        car2.printData();
+        car1.display();
+        car2.display();
         Motorcycle m1= new Motorcycle(11458,"Hashtag",
                 "Harley",true,false,2,Fuel.Petrol,
                 56.50d,15.10d);
-        m1.printData();
+        m1.display();
         Bus b2=new Bus(11254,"Here only",
                 "Volvo",true,false,7,Fuel.Electric,
                 BusType.MiniCoach,true,true);
         Bus b1=new Bus(11245,"Here only",
                 "Volv5",true,false,7,Fuel.Electric,
                 BusType.MiniCoach,true,true);
-        b1.printData();
+        b1.display();
 
-        b2.printData();
+        b2.display();
 
 
         System.out.println(/*"Vehicle List: "+*/Vehicle.getVehicleList());

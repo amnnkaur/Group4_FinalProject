@@ -22,7 +22,7 @@ enum Type {
     Bus
 }
 
-public abstract class Vehicle {
+public abstract class Vehicle implements IDisplay {
     static String str;
     String prefixer;
     /*   static String key;
@@ -260,7 +260,7 @@ public abstract class Vehicle {
     }
 
 
-    public void printData() {
+    public void display() {
 //        setHashmap();
 
         System.out.println("Vehicle Identification Number: " + prefixer());

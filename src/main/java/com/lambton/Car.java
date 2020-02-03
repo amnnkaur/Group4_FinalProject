@@ -45,8 +45,8 @@ public class Car extends Vehicle {
 
 
     @Override
-    public void printData() {
-        super.printData();
+    public void display() {
+        super.display();
         System.out.println("Car Type: " + getCarType());
         System.out.println("Car Color: " + getCarColor());
         System.out.println();
