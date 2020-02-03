@@ -27,7 +27,7 @@ public class ExcelWriter {
             "Insurance Name Provider", "No. of seats", "Fuel", "Base Rate", "Rate per Km", "Top Speed", "Mileage"};
     private static String[] busColumns = {"VIN", "Vehicle Description", "Manufacturer Name", "isSelfDrive", "Driver", "isInsured",
             "Insurance Name Provider", "No. of seats", "Fuel", "Base Rate", "Rate per Km", "Bus Type", "Accessibility", "Wifi Available"};
-    private static String[] vehicleRentColumns = {"Rent Start Date", "Rent End Date", "Rented Days", "Vehicle",
+    private static String[] vehicleRentColumns = {"Customer","Rent Start Date", "Rent End Date", "Rented Days", "Vehicle",
             "Vehicle Type", "No.of Km Drived", "Total Bill"};
     private static List<Customer> customers = new ArrayList<>();
     private static List<Driver> drivers = new ArrayList<>();
@@ -157,13 +157,13 @@ public class ExcelWriter {
         cars.add(new Car("JTHKD5BH8D2168653", "Civic", "Hyundai",
                 true, true, 5, Fuel.Electric, CarType.Sedan, "Blue"));
 
-        vehiclesrents.add(new VehicleRent(LocalDate.of(2020, 01, 15),
+        vehiclesrents.add(new VehicleRent(11546,LocalDate.of(2020, 01, 15),
                 LocalDate.of(2020, 01, 25), VehicleType.CAR, "JHMZF1C67BS073397", 55.18f));
 
-        vehiclesrents.add(new VehicleRent(LocalDate.of(2020, 01, 17),
+        vehiclesrents.add(new VehicleRent(11563,LocalDate.of(2020, 01, 17),
                 LocalDate.of(2020, 02, 20), VehicleType.BUS, "1G1ZT548X5F147693", 15.25f));
 
-        vehiclesrents.add(new VehicleRent(LocalDate.of(2020, 07, 05),
+        vehiclesrents.add(new VehicleRent(11557,LocalDate.of(2020, 07, 05),
                 LocalDate.of(2020, 07, 17), VehicleType.MOTORCYCLE, "2HKRL1863YH598774", 36.74f));
 
 
@@ -403,12 +403,12 @@ public class ExcelWriter {
                     .setCellValue(owner.getOfficeNumber());
             row.createCell(12)
                     .setCellValue(owner.getWebsite());
-            for(int i=0;i<owner.getCount();i++){
+           /* for(int i=0;i<owner.getCount();i++){
 //                owner.getVehicleListOwned();
                 row.createCell(13+i)
                     .setCellValue(owner.getVehicleListOwned().get(i));
 
-            }
+            }*/
         }
         int carRowNum = 1;
         for (Car car : cars) {
@@ -548,24 +548,27 @@ public class ExcelWriter {
             Row row = vehiclerentsheet.createRow(vehiclerentRowNum++);
 
             row.createCell(0)
-                    .setCellValue(vehicleRent.getRentStartDate().toString());
+                    .setCellValue(vehicleRent.getCustomerName());
 
             row.createCell(1)
-                    .setCellValue(vehicleRent.getRentEndDate().toString());
+                    .setCellValue(vehicleRent.getRentStartDate().toString());
 
             row.createCell(2)
-                    .setCellValue(vehicleRent.getRentedDays());
+                    .setCellValue(vehicleRent.getRentEndDate().toString());
 
             row.createCell(3)
-                    .setCellValue(vehicleRent.getVehicleName());
+                    .setCellValue(vehicleRent.getRentedDays());
 
             row.createCell(4)
-                    .setCellValue(vehicleRent.getVehicleType().toString());
+                    .setCellValue(vehicleRent.getVehicleName());
 
             row.createCell(5)
-                    .setCellValue(vehicleRent.getNoOfKmDrived());
+                    .setCellValue(vehicleRent.getVehicleType().toString());
 
             row.createCell(6)
+                    .setCellValue(vehicleRent.getNoOfKmDrived());
+
+            row.createCell(7)
                     .setCellValue(vehicleRent.getTotalFare());
 
         }

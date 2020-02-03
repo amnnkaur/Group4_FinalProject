@@ -1,11 +1,14 @@
 package com.lambton;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Customer extends Person implements IDisplay {
     String address;
     String city;
     String[] vehicleRent;
+    static HashMap<String ,String>customerList=new HashMap<>();
 
     public Customer(int id, String firstName, String lastName, Gender gender, Date birthDate,
                     String mobileNumber, String emailId,
@@ -14,6 +17,21 @@ public class Customer extends Person implements IDisplay {
         super(id, firstName, lastName, gender, birthDate, mobileNumber, emailId, userName, password);
         this.address = address;
         this.city = city;
+        this.customerList.put(String.valueOf(id),
+                firstName);
+    }
+
+    public static HashMap<String, String> getCustomerList() {
+        System.out.println("Customer List: ");
+        for (Map.Entry<String, String> entry : customerList.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
+        return null;
+//        return customerList;
+    }
+
+    public void setCustomerList(HashMap<String, String> customerList) {
+        this.customerList = customerList;
     }
 
     public String prefixPlacing() {

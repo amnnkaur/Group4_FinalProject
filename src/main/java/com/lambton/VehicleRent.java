@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.time.temporal.ChronoUnit;
 
-enum VehicleType{
+enum VehicleType {
     CAR,
     MOTORCYCLE,
     BUS
@@ -22,14 +22,17 @@ public class VehicleRent {
     VehicleType vehicleType;
     float noOfKmDrived;
     float totalFare;
+    int customerId;
+    String customerName;
 
-
-    public VehicleRent(LocalDate rentStartDate, LocalDate rentEndDate, VehicleType vehicleType,String vehicleId, float noOfKmDrived) {
+    public VehicleRent(int customerId,LocalDate rentStartDate, LocalDate rentEndDate, VehicleType vehicleType, String vehicleId, float noOfKmDrived) {
+        this.customerId=customerId;
         this.rentStartDate = rentStartDate;
         this.rentEndDate = rentEndDate;
-        this.vehicleType=vehicleType;
+        this.vehicleType = vehicleType;
         this.vehicleId = vehicleId;
         this.noOfKmDrived = noOfKmDrived;
+
     }
 
     public String getVehicleName() {
@@ -41,6 +44,16 @@ public class VehicleRent {
             vehicleName = "Invalid Vehicle Entry";
         }
         return vehicleName;
+    }
+    public String getCustomerName(){
+        if (Customer.customerList.containsKey(String.valueOf(customerId))) {
+//            System.out.println("if block");
+            customerName = Customer.customerList.get(String.valueOf(customerId));
+        } else {
+//            System.out.println("else block");
+            customerName = "Invalid Entry";
+        }
+        return customerName;
     }
 
     public VehicleType getVehicleType() {
@@ -113,7 +126,7 @@ public class VehicleRent {
         System.out.println("Rented No. of days: " + getRentedDays());
         System.out.println("Vehicle: " + getVehicleName());
         System.out.println("Vehicle Type: " + getVehicleType());
-        System.out.println("No. of Km. drived: " + getNoOfKmDrived()+"km");
+        System.out.println("No. of Km. drived: " + getNoOfKmDrived() + "km");
         System.out.println("Total bill to pay: $" + getTotalFare());
     }
 }

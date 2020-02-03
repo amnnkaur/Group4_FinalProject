@@ -41,7 +41,6 @@ public abstract class Vehicle implements IDisplay {
     int baseRate;
     int ratePerKm;
     static HashMap<String, String> vehicleList = new HashMap<>();
-//    static HashMap<String,Type> type=new HashMap<>();
 
     public Vehicle(String vehicleIdentificationNumber,
                    String vehicleDescription,
@@ -78,22 +77,6 @@ public abstract class Vehicle implements IDisplay {
 
     }
 
-  /*  public static HashMap<String, Type> getType() {
-        System.out.println("Vehicle Type List: ");
-        for (Map.Entry<String, Type> entry : type.entrySet()) {
-            System.out.println(entry.getKey() + " - " + entry.getValue());
-        }
-        return null;
-    }*/
-
-/*    public static void setType(HashMap<String, Type> type) {
-        Vehicle.type = type;
-    }*/
-    /*    public void setHashmap() {
-//        this.prefixer=prefixer();
-        this.vehicleList.put(String.valueOf(prefixer()),
-                manufacturerName);
-    }*/
 
     public void setVehicleList(HashMap<String, String> vehicleList) {
 //        prefixer();
@@ -107,17 +90,6 @@ public abstract class Vehicle implements IDisplay {
         }
         return null;
     }
-
-    /*   public static String getVehicleList() {
-        for(Map.Entry<String,String>entry:vehicleList.entrySet()) {
-            key=entry.getKey();
-            value=entry.getValue();
-            hashMap=key+" - "+value;
-           *//* System.out.println(entry.getKey() + " - " + entry.getValue());*//*
-        }
-        return hashMap;
-    }*/
-
 
     public Type getVehicleType() {
         return vehicleType;
@@ -235,20 +207,20 @@ public abstract class Vehicle implements IDisplay {
         return ratePerKm;
     }
 
-    public  String prefixer() {
+    public String prefixer() {
         switch (vehicleType) {
             case Car: {
-                str = new String(String.valueOf(prefixers.CAR+"_"));
+                str = new String(String.valueOf(prefixers.CAR + "_"));
                 str = str.concat(String.valueOf(vehicleIdentificationNumber));
                 break;
             }
             case Motorcycle: {
-                str = new String(String.valueOf(prefixers.MOT+"_"));
+                str = new String(String.valueOf(prefixers.MOT + "_"));
                 str = str.concat(String.valueOf(vehicleIdentificationNumber));
                 break;
             }
             case Bus: {
-                str = new String(String.valueOf(prefixers.BUS+"_"));
+                str = new String(String.valueOf(prefixers.BUS + "_"));
                 str = str.concat(String.valueOf(vehicleIdentificationNumber));
                 break;
             }
