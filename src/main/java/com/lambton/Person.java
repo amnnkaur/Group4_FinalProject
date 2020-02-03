@@ -21,12 +21,15 @@ public abstract class Person {
     String firstName;
     String lastName;
     Gender gender;
-    Date birthDate;
-    int age;
+    static Date birthDate;
+    static int age;
     String mobileNumber;
     String emailId;
     String userName;
     String password;
+    String providedPassword;
+    String mySecurePassword;
+    String salt;
 
     String str;
     static String[] months = new String[]{"null",
@@ -101,9 +104,9 @@ public abstract class Person {
         return birthDate;
     }
 
-/*    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
-    }*/
+    }
 
     public String getMobileNumber() {
         return mobileNumber;
@@ -128,40 +131,55 @@ public abstract class Person {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    public String getOriginalPassword(){
+
+    /*  public String getOriginalPassword(){
+          return password;
+      }*/
+    public String getPassword() {
+        providedPassword = password;
+        salt = PasswordUtils.getSalt(30);
+        mySecurePassword = PasswordUtils.generateSecurePassword(providedPassword, salt);
+        return mySecurePassword;
+    }
+
+    public String getOriginalPassword() {
+        VerifyProvidedPassword(providedPassword, mySecurePassword, salt);
         return password;
     }
-    public char[] getPassword() {
-        char[] encryptedPassword = password.toCharArray();
-        return encryptedPassword;
+
+    private static void VerifyProvidedPassword(String providedPassword, String securePassword, String salt) {
+        boolean passwordMatch = PasswordUtils.verifyUserPassword(providedPassword, securePassword, salt);
+        if (passwordMatch) {
+            System.out.println("Provided user password " + providedPassword + " is correct.");
+        } else {
+            System.out.println("Provided password is incorrect");
+        }
     }
+
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    private int getAge() {
+    private static int getAge() {
         LocalDate today = LocalDate.now();
-        this.age = today.getYear() - birthDate.getYear();
+        age = today.getYear() - birthDate.getYear();
         return age;
     }
-
-
 
 
     public void printData() {
         System.out.println("First Name: " + getFirstName());
         System.out.println("Last Name: " + getLastName());
         System.out.println("Gender: " + getGender());
-        System.out.println("Birth Date: " + getBirthDate().getDate() + "/" + months[getBirthDate().getMonth()] + "/" + getBirthDate().getYear());
+        System.out.println("Birth Date: " + getBirthDate());
         System.out.println("Email: " + getEmailId());
         System.out.println("Mobile Number: " + getMobileNumber());
         System.out.println("Age: " + getAge() + " years");
         System.out.println("User name: " + getUserName());
         System.out.println("Password: " + getPassword());
-        System.out.println("Original password: " +getOriginalPassword());
+        System.out.println("Original password: " + getOriginalPassword());
     }
-
 
 
 }

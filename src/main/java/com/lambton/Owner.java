@@ -1,24 +1,52 @@
 package com.lambton;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Owner extends Person {
 
     String companyTitle;
     String officeNumber;
     String website;
-    String[] vehicleListOwned;
-
+//    String[] vehicleListOwned;
+    Scanner in=new Scanner(System.in);
+    int count;
+    int vehicleId;
+    String valueFromMap = null;
+     HashMap<Integer,HashMap<String,String>>ownedVehicle=new HashMap<>();
     public Owner(int id, String firstName, String lastName, Gender gender, Date birthDate,
                  String mobileNumber, String emailId, String userName, String password,
-                 String companyTitle, String officeNumber, String website) {
+                 String companyTitle, String officeNumber, String website, int count) {
         super(id, firstName, lastName, gender, birthDate, mobileNumber, emailId, userName, password);
         this.companyTitle = companyTitle;
         this.officeNumber = officeNumber;
         this.website = website;
+       /* this.count=count;
+        for(int i=0;i<count;i++){
+        this.vehicleId=in.nextInt();
+//            this.ownedVehicle.put(id).put(String.valueOf(vehicleId),Vehicle.vehicleList.get(String.valueOf(vehicleId)));
+
+            if(Vehicle.vehicleList.containsKey(vehicleId)){
+                this.valueFromMap = ownedVehicle.get(id).get(Vehicle.vehicleList.get(String.valueOf(vehicleId)));
+            }
+        }
+//        this.ownedVehicle.put(id,Vehicle.vehicleList.get(vehicleId));*/
     }
 
-    public String[] getVehicleListOwned() {
+    public HashMap<Integer, HashMap<String, String>> getOwnedVehicle() {
+        System.out.println("Owned Vehicle List: ");
+        for (Map.Entry<Integer, HashMap<String,String>> entry : ownedVehicle.entrySet()) {
+            System.out.println(entry.getKey() + " - "  +entry.getValue());
+        }
+        return null;
+    }
+
+    public void setOwnedVehicle(HashMap<Integer, HashMap<String, String>> ownedVehicle) {
+//       for(int i=0;i<count;i++)
+    }
+/*    public String[] getVehicleListOwned() {
         int i = 0;
         for (i = 0; i < vehicleListOwned.length; i++) {
             System.out.println("Vehicle " + (i + 1) + ": " + vehicleListOwned[i]);
@@ -28,6 +56,14 @@ public class Owner extends Person {
 
     public void setVehicleListOwned(String[] vehicleListOwned) {
         this.vehicleListOwned = vehicleListOwned;
+    }*/
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public String getCompanyTitle() {
@@ -67,7 +103,9 @@ public class Owner extends Person {
         System.out.println("Company Title: " + getCompanyTitle());
         System.out.println("Business Landline Number: " + getOfficeNumber());
         System.out.println("Website: " + getWebsite());
-        getVehicleListOwned();
+   /*     System.out.println("Vehicles Owned: "+count);
+        System.out.println("value "+ valueFromMap );*/
+//        getVehicleListOwned();
         System.out.println();
     }
 }

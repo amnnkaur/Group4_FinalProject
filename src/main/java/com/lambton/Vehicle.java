@@ -30,7 +30,7 @@ public abstract class Vehicle {
        static String hashMap;*/
     static long vehicleIdentificationNumber;
     String vehicleDescription;
-    String manufacturerName;
+    static String manufacturerName;
     boolean isSelfDrive;
     String Driver;
     boolean isInsured;
@@ -41,7 +41,7 @@ public abstract class Vehicle {
     int baseRate;
     int ratePerKm;
     static HashMap<String, String> vehicleList = new HashMap<>();
-    static HashMap<String,Type> type=new HashMap<>();
+//    static HashMap<String,Type> type=new HashMap<>();
 
     public Vehicle(long vehicleIdentificationNumber,
                    String vehicleDescription,

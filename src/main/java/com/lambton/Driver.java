@@ -52,7 +52,7 @@ public class Driver extends Person {
         super.printData();
         System.out.println("Licence Number: " + getLicenceNumber());
         System.out.println("Driving History: " + isDrivingHistoryCleared());
-        System.out.println("Salary: " + getSalary());
+        System.out.println("Salary: $" + getSalary());
         System.out.println();
 
     }
