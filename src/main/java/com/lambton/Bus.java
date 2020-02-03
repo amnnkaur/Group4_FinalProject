@@ -14,7 +14,7 @@ public class Bus extends Vehicle implements IDisplay {
     boolean isAccessibilityServiceAvailable;
     boolean isWifiAvailable;
 
-    public Bus(long vehicleIdentificationNumber, String vehicleDescription,
+    public Bus(String vehicleIdentificationNumber, String vehicleDescription,
                String manufacturerName, boolean isSelfDrive,
                boolean isInsured,
                int noOfSeat, Fuel fuelType,

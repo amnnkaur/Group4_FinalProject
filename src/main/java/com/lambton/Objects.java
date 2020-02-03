@@ -2,15 +2,26 @@ package com.lambton;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Objects {
     public static void main(String[] args) {
-        Customer c1 = new Customer(10, "Anmol", "Singh", Gender.Male,
-                new Date(1997, 11, 15),
+        Calendar dateOfBirth=Calendar.getInstance();
+        dateOfBirth.set(1997,Calendar.NOVEMBER,15);
+        Customer c1 = new Customer(11514, "Anmol", "Singh", Gender.Male,
+                dateOfBirth.getTime(),
                 "9988421530", "me@me.com",
-                "Me", "ghtutgd", "Brampton", "Toronto");
+                "Me_AnmolSingh", "ghtutgd", "Brampton", "Toronto");
         c1.display();
+        dateOfBirth.set(1997, Calendar.JULY, 26);
+        Customer c2= new Customer(11589, "Aman", "Kaur", Gender.Female,
+                dateOfBirth.getTime(),
+                "9547562145", "aman@aman.com",
+                "Me_AmanKaur", "458954hgtfr", "New York", "USA");
+        c2.display();
+
+        
 
         Driver d1 = new Driver(10, "Anmol", "Singh", Gender.Male,
                 new Date(1997, 11, 15),
@@ -29,21 +40,21 @@ public class Objects {
         o1.setVehicleListOwned(ref);*/
         o1.display();
 
-        Car car1 = new Car(11236, "New Car", "Ford",
+        Car car1 = new Car("11236", "New Car", "Ford",
                 true, false, 4, Fuel.Electric, CarType.Sedan, "Blue");
-        Car car2 = new Car(11278, "New Car",
+        Car car2 = new Car("11278", "New Car",
                 "Ruther_Ford",
                 true, false, 4, Fuel.Electric, CarType.Sedan, "Blue");
         car1.display();
         car2.display();
-        Motorcycle m1= new Motorcycle(11458,"Hashtag",
+        Motorcycle m1= new Motorcycle("11458","Hashtag",
                 "Harley",true,false,2,Fuel.Petrol,
                 56.50d,15.10d);
         m1.display();
-        Bus b2=new Bus(11254,"Here only",
+        Bus b2=new Bus("11254","Here only",
                 "Volvo",true,false,7,Fuel.Electric,
                 BusType.MiniCoach,true,true);
-        Bus b1=new Bus(11245,"Here only",
+        Bus b1=new Bus("11245","Here only",
                 "Volv5",true,false,7,Fuel.Electric,
                 BusType.MiniCoach,true,true);
         b1.display();
@@ -55,7 +66,7 @@ public class Objects {
        o1.getOwnedVehicle();
 //        System.out.println(/*"Vehicle List: "+*/Vehicle.getType());
         VehicleRent vr1=new VehicleRent(LocalDate.of(2020,01,15),
-                LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,11458,15.25f);
+                LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,"11458",15.25f);
         vr1.printData();
     }
 }

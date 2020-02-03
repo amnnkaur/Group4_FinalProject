@@ -78,9 +78,98 @@ public class ExcelWriter {
                 dateOfBirth.getTime(),
                 "8754632159", "me_kaur@me.com",
                 "Me_param", "paramkaur", "Richwood", "Brampton"));
+
+//        Calendar dateOfBirth = Calendar.getInstance();
+        dateOfBirth.set(1997, Calendar.NOVEMBER, 01);
+        drivers.add(new Driver(12265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
+                "9856475452", "raman@kumar.com", "KumarShanu",
+                "kjhujh", 456854, true, 5445.00f));
+
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        drivers.add(new Driver(12271, "Michael", "Jordan", Gender.Male, dateOfBirth.getTime(),
+                "6544875984", "micheal@jordan.com", "Jordan_Micheal",
+                "dfgtre3", 854787, false, 2045.15f));
+
+        dateOfBirth.set(2001, Calendar.NOVEMBER, 01);
+        drivers.add(new Driver(12236, "Michelle", "Rai", Gender.Female, dateOfBirth.getTime(),
+                "8547256318", "michelle@gmail.com", "michelle",
+                "1254gytr", 169754, false, 1145.05f));
+
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        drivers.add(new Driver(12451, "Sherin", "Gupta", Gender.Female, dateOfBirth.getTime(),
+                "98564748572", "gupSherin@yahoo.com", "SherinG",
+                "524plo;", 233256, true, 998.40f));
+
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        drivers.add(new Driver(12781, "Rakesh", "Jain", Gender.Male, dateOfBirth.getTime(),
+                "9852395452", "jainbhai@gmail.com", "JainSaab",
+                "ppo;;lko", 115897, true, 840.15f));
+
+//        Calendar dateOfBirth = Calendar.getInstance();
+        dateOfBirth.set(1981, Calendar.NOVEMBER, 01);
+        owners.add(new Owner(13981, "Caria", "MacNamee", Gender.Female, dateOfBirth.getTime(),
+                "6723367567", "me@me.com", "Caria", "ghat",
+                "Eimbee", "2989624526", "auda.org.au", 2));
+
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        owners.add(new Owner(13657, "Gillingum", "Road", Gender.Male, dateOfBirth.getTime(),
+                "6892145763", "gillingum@gillingum.com", "Road", "dhobi_ghat",
+                "Officials", "2471596587", "officials.org.au", 5));
+
+        dateOfBirth.set(1977, Calendar.NOVEMBER, 01);
+        owners.add(new Owner(13215, "Careem", "Nazi", Gender.Female, dateOfBirth.getTime(),
+                "9988456321", "careem@me.com", "Careem", "Gaziattack",
+                "DCompany", "2985421526", "ComapnyD.org.au", 3));
+
+
+
+        cars.add(new Car("JHMZF1C67BS073397", "Mustang", "Ford",
+        true, true, 2, Fuel.Diesel, CarType.Sport, "Red"));
+
+        cars.add(new Car("5TBRU34155S423198", "G-Wagon", "Mercedes",
+                false, true, 7, Fuel.Petrol, CarType.SUV, "Space-Grey"));
+
+        motorcycles.add(new Motorcycle("1FTSW21RX8EC53647","Davidson",
+                "Harley",true,false,2,Fuel.Petrol,
+                56.50d,36.10d));
+
+        motorcycles.add(new Motorcycle("2HKRL1863YH598774","BMX",
+                "BMW",true,true,2,Fuel.Petrol,
+                65.00d,32.24d));
+
+        motorcycles.add(new Motorcycle("1J4BA6H11AL289387","Bullet",
+                "Royal Enfield",true,false,2,Fuel.Petrol,
+                70.50d,25.10d));
+
+        buses.add(new Bus("5LMCJ1A97FUJ59251","Volvo",
+                "BusCompany-A",false,true,30,Fuel.Diesel,
+                BusType.Volvo,true,true));
+
+        buses.add(new Bus("1G1ZT548X5F147693","Double_decker",
+                "BusCompany-B",false,true,70,Fuel.Diesel,
+                BusType.DoubleDecker,true,false));
+
+        buses.add(new Bus("SALFR2BG0EH387740","Mini_coach",
+                "BusCompany-C",true,false,40,Fuel.Petrol,
+                BusType.MiniCoach,true,true));
+
+
+        cars.add(new Car("JTHKD5BH8D2168653", "Civic", "Hyundai",
+                true, true, 5, Fuel.Electric, CarType.Sedan, "Blue"));
+
+        vehiclesrents.add(new VehicleRent(LocalDate.of(2020,01,15),
+                LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,"JHMZF1C67BS073397",15.25f));
+
+        vehiclesrents.add(new VehicleRent(LocalDate.of(2020,01,15),
+                LocalDate.of(2020,02,20),VehicleType.MOTORCYCLE,"11458",15.25f));
+
+        vehiclesrents.add(new VehicleRent(LocalDate.of(2020,01,15),
+                LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,"11458",15.25f));
+
+
     }
 
-    static {
+    /*static {
         Calendar dateOfBirth = Calendar.getInstance();
         dateOfBirth.set(1997, Calendar.NOVEMBER, 01);
         drivers.add(new Driver(12265, "Raman", "Kumar", Gender.Male, dateOfBirth.getTime(),
@@ -130,57 +219,76 @@ public class ExcelWriter {
     }
 
     static {
-          cars.add(new Car(11236, "New Car", "Ford",
+         *//* cars.add(new Car("JTHKD5BH8D2168653", "Civic", "Hyundai",
+                true, true, 5, Fuel.Electric, CarType.Sedan, "Blue"));
+
+       *//* cars.add(new Car("JHMZF1C67BS073397", "New Car", "Ford",
                 true, false, 4, Fuel.Electric, CarType.Sedan, "Blue"));
 
-        cars.add(new Car(11236, "New Car", "Ford",
+        cars.add(new Car("5TBRU34155S423198", "New Car", "Ford",
                 true, false, 4, Fuel.Electric, CarType.Sedan, "Blue"));
 
-        cars.add(new Car(11236, "New Car", "Ford",
-                true, false, 4, Fuel.Electric, CarType.Sedan, "Blue"));
-
-    }
-
-    static {
-        motorcycles.add(new Motorcycle(11458,"Hashtag",
+        motorcycles.add(new Motorcycle("1FTSW21RX8EC53647","Hashtag",
                 "Harley",true,false,2,Fuel.Petrol,
                 56.50d,15.10d));
 
-        motorcycles.add(new Motorcycle(11458,"Hashtag",
+        motorcycles.add(new Motorcycle("2HKRL1863YH598774","Hashtag",
                 "Harley",true,false,2,Fuel.Petrol,
                 56.50d,15.10d));
 
-        motorcycles.add(new Motorcycle(11458,"Hashtag",
+        motorcycles.add(new Motorcycle("1J4BA6H11AL289387","Hashtag",
                 "Harley",true,false,2,Fuel.Electric,
                 56.50d,15.10d));
 
+        buses.add(new Bus("5LMCJ1A97FUJ59251","Here only",
+                "Volvo",true,false,7,Fuel.Electric,
+                BusType.MiniCoach,true,true));
+
+        buses.add(new Bus("1G1ZT548X5F147693","Here only",
+                "Volvo",true,false,7,Fuel.Electric,
+                BusType.MiniCoach,true,true));
+
+        buses.add(new Bus("SALFR2BG0EH387740","Here only",
+                "Volvo",true,false,7,Fuel.Electric,
+                BusType.MiniCoach,true,true));
+
+
+        cars.add(new Car("JTHKD5BH8D2168653", "Civic", "Hyundai",
+                true, true, 5, Fuel.Electric, CarType.Sedan, "Blue"));
+
+
     }
+
+*//*    static {
+
+
+    }*//*
+
+   *//* static {
+        buses.add(new Bus("5LMCJ1A97FUJ59251","Here only",
+                "Volvo",true,false,7,Fuel.Electric,
+                BusType.MiniCoach,true,true));
+
+        buses.add(new Bus("1G1ZT548X5F147693","Here only",
+                "Volvo",true,false,7,Fuel.Electric,
+                BusType.MiniCoach,true,true));
+
+        buses.add(new Bus("SALFR2BG0EH387740","Here only",
+                "Volvo",true,false,7,Fuel.Electric,
+                BusType.MiniCoach,true,true));
+    }*//*
 
     static {
-        buses.add(new Bus(11254,"Here only",
-                "Volvo",true,false,7,Fuel.Electric,
-                BusType.MiniCoach,true,true));
-
-        buses.add(new Bus(11254,"Here only",
-                "Volvo",true,false,7,Fuel.Electric,
-                BusType.MiniCoach,true,true));
-
-        buses.add(new Bus(11254,"Here only",
-                "Volvo",true,false,7,Fuel.Electric,
-                BusType.MiniCoach,true,true));
-    }
-
-    static {
         vehiclesrents.add(new VehicleRent(LocalDate.of(2020,01,15),
                 LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,11458,15.25f));
 
         vehiclesrents.add(new VehicleRent(LocalDate.of(2020,01,15),
-                LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,11458,15.25f));
+                LocalDate.of(2020,02,20),VehicleType.MOTORCYCLE,11458,15.25f));
 
         vehiclesrents.add(new VehicleRent(LocalDate.of(2020,01,15),
                 LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,11458,15.25f));
     }
-
+*/
     public static void main(String[] args) throws IOException, InvalidFormatException {
         // Create a Workbook
         Workbook workbook = new XSSFWorkbook(); // new HSSFWorkbook() for generating `.xls` file
@@ -213,6 +321,9 @@ public class ExcelWriter {
         // Create a CellStyle with the font
         CellStyle headerCellStyle = workbook.createCellStyle();
         headerCellStyle.setFont(headerFont);
+/*
+        CellStyle driverHeaderCellStyle = workbook.createCellStyle();
+        driverHeaderCellStyle.setFont(headerFont);*/
 
         // Create a Row
         Row headerRow = sheet.createRow(0);
@@ -342,7 +453,7 @@ public class ExcelWriter {
 
             Cell dateOfBirthCell = row.createCell(4);
             dateOfBirthCell.setCellValue(driver.getBirthDate());
-            dateOfBirthCell.setCellStyle(dateCellStyle);
+            dateOfBirthCell.setCellStyle(driverDateCellStyle);
 
             row.createCell(5)
                     .setCellValue(driver.getMobileNumber());
@@ -388,7 +499,7 @@ public class ExcelWriter {
 
             Cell dateOfBirthCell = row.createCell(4);
             dateOfBirthCell.setCellValue(owner.getBirthDate());
-            dateOfBirthCell.setCellStyle(dateCellStyle);
+            dateOfBirthCell.setCellStyle(ownerDateCellStyle);
 
             row.createCell(5)
                     .setCellValue(owner.getMobileNumber());
@@ -418,46 +529,46 @@ public class ExcelWriter {
         }
         int carRowNum = 1;
         for (Car car : cars) {
-            Row row = carsheet.createRow(carRowNum++);
+            Row carRow = carsheet.createRow(carRowNum++);
 
-            row.createCell(0)
+            carRow.createCell(0)
                     .setCellValue(car.getVehicleIdentificationNumber());
 
-            row.createCell(1)
+            carRow.createCell(1)
                     .setCellValue(car.getVehicleDescription());
 
-            row.createCell(2)
+            carRow.createCell(2)
                     .setCellValue(car.getManufacturerName());
 
-            row.createCell(3)
+            carRow.createCell(3)
                     .setCellValue(car.isSelfDrive());
 
-            row.createCell(4)
+            carRow.createCell(4)
                     .setCellValue(car.getDriver());
 
-            row.createCell(5)
+            carRow.createCell(5)
                     .setCellValue(car.isInsured());
 
-            row.createCell(6)
+            carRow.createCell(6)
                     .setCellValue(car.getInsuranceNameProvider());
 
-            row.createCell(7)
+            carRow.createCell(7)
                     .setCellValue(car.getNoOfSeat());
 
-            row.createCell(8)
+            carRow.createCell(8)
                     .setCellValue(car.getFuelType().toString());
 
-            row.createCell(9)
-                    .setCellValue(car.getBaseRate());
-
-            row.createCell(10)
-                    .setCellValue(car.getRatePerKm());
-
-            row.createCell(11)
+            carRow.createCell(9)
                     .setCellValue(car.getCarType().toString());
 
-            row.createCell(12)
+            carRow.createCell(10)
                     .setCellValue(car.getCarColor());
+
+            carRow.createCell(11)
+                    .setCellValue(car.getBaseRate());
+
+            carRow.createCell(12)
+                    .setCellValue(car.getRatePerKm());
         }
         int motorcycleRowNum = 1;
         for (Motorcycle motorcycle : motorcycles) {

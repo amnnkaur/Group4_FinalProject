@@ -28,9 +28,9 @@ public abstract class Vehicle implements IDisplay {
     /*   static String key;
        static String value;
        static String hashMap;*/
-    static long vehicleIdentificationNumber;
+    String vehicleIdentificationNumber;
     String vehicleDescription;
-    static String manufacturerName;
+    String manufacturerName;
     boolean isSelfDrive;
     String Driver;
     boolean isInsured;
@@ -43,7 +43,7 @@ public abstract class Vehicle implements IDisplay {
     static HashMap<String, String> vehicleList = new HashMap<>();
 //    static HashMap<String,Type> type=new HashMap<>();
 
-    public Vehicle(long vehicleIdentificationNumber,
+    public Vehicle(String vehicleIdentificationNumber,
                    String vehicleDescription,
                    String manufacturerName,
                    boolean isSelfDrive,
@@ -123,11 +123,11 @@ public abstract class Vehicle implements IDisplay {
         return vehicleType;
     }
 
-    public long getVehicleIdentificationNumber() {
+    public String getVehicleIdentificationNumber() {
         return vehicleIdentificationNumber;
     }
 
-    public void setVehicleIdentificationNumber(long vehicleIdentificationNumber) {
+    public void setVehicleIdentificationNumber(String vehicleIdentificationNumber) {
         this.vehicleIdentificationNumber = vehicleIdentificationNumber;
     }
 
@@ -235,7 +235,7 @@ public abstract class Vehicle implements IDisplay {
         return ratePerKm;
     }
 
-    public static String prefixer() {
+    public  String prefixer() {
         switch (vehicleType) {
             case Car: {
                 str = new String(String.valueOf(prefixers.CAR+"_"));

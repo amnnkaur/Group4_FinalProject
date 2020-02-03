@@ -5,7 +5,7 @@ public class Motorcycle extends Vehicle implements IDisplay {
     double topSpeed;
     double milage;
 
-    public Motorcycle(long vehicleIdentificationNumber, String vehicleDescription,
+    public Motorcycle(String vehicleIdentificationNumber, String vehicleDescription,
                       String manufacturerName, boolean isSelfDrive,
                       boolean isInsured, int noOfSeat, Fuel fuelType,
                       double topSpeed, double milage) {

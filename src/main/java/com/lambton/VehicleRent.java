@@ -17,14 +17,14 @@ public class VehicleRent {
     LocalDate rentStartDate;
     LocalDate rentEndDate;
     long rentedDays;
-    long vehicleId;
+    String vehicleId;
     String vehicleName;
     VehicleType vehicleType;
     float noOfKmDrived;
     float totalFare;
 
 
-    public VehicleRent(LocalDate rentStartDate, LocalDate rentEndDate, VehicleType vehicleType,long vehicleId, float noOfKmDrived) {
+    public VehicleRent(LocalDate rentStartDate, LocalDate rentEndDate, VehicleType vehicleType,String vehicleId, float noOfKmDrived) {
         this.rentStartDate = rentStartDate;
         this.rentEndDate = rentEndDate;
         this.vehicleType=vehicleType;
@@ -33,7 +33,7 @@ public class VehicleRent {
     }
 
     public String getVehicleName() {
-        if (Vehicle.vehicleList.containsKey(String.valueOf(vehicleId))) {
+        if (Vehicle.vehicleList.containsKey(vehicleId)) {
 //            System.out.println("if block");
             vehicleName = Vehicle.vehicleList.get(String.valueOf(vehicleId));
         } else {

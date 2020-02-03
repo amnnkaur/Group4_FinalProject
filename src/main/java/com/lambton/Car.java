@@ -7,7 +7,8 @@ enum CarType {
     SUV,
     Crossover,
     Coupe,
-    Convertible
+    Convertible,
+    Sport
 }
 
 public class Car extends Vehicle implements IDisplay {
@@ -15,7 +16,7 @@ public class Car extends Vehicle implements IDisplay {
     CarType carType;
     String carColor;
 
-    public Car(long vehicleIdentificationNumber, String vehicleDescription, String manufacturerName,
+    public Car(String vehicleIdentificationNumber, String vehicleDescription, String manufacturerName,
                boolean isSelfDrive/*, String driver*/, boolean isInsured,/* String insuranceNameProvider,*/
                int noOfSeat, Fuel fuelType,/* Type vehicleType, int baseRate, int ratePerKm,*/
                CarType carType, String carColor) {
@@ -44,7 +45,7 @@ public class Car extends Vehicle implements IDisplay {
     }
 
 
-
+//@Override
     public void display() {
         super.display();
         System.out.println("Car Type: " + getCarType());
