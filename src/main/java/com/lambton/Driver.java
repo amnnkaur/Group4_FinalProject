@@ -16,6 +16,7 @@ public class Driver extends Person implements IDisplay {
         this.salary = salary;
     }
 
+
     public long getLicenceNumber() {
         return licenceNumber;
     }
