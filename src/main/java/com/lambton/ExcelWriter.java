@@ -20,7 +20,7 @@ public class ExcelWriter {
     private static String[] driverColumns = {"ID", "First Name", "Last Name", "Gender", "DOB", "Mobile no.", "Age", "Email",
             "User Name", "Password", "Original Password", "Licence Number", "Driving History", "Salary"};
     private static String[] ownerColumns = {"ID", "First Name", "Last Name", "Gender", "DOB", "Mobile no.", "Email",
-            "User Name", "Password", "Original Password", "Company Title", "Office Contact", "Website"};
+            "User Name", "Password", "Original Password", "Company Title", "Office Contact", "Website","Vehicle List"};
     private static String[] carColumns = {"VIN", "Vehicle Description", "Manufacturer Name", "isSelfDrive", "Driver", "isInsured",
             "Insurance Name Provider", "No. of seats", "Fuel", "Car Type", "Color", "Base Rate", "Rate per Km"};
     private static String[] motorcycleColumns = {"VIN", "Vehicle Description", "Manufacturer Name", "isSelfDrive", "Driver", "isInsured",
@@ -158,13 +158,13 @@ public class ExcelWriter {
                 true, true, 5, Fuel.Electric, CarType.Sedan, "Blue"));
 
         vehiclesrents.add(new VehicleRent(LocalDate.of(2020, 01, 15),
-                LocalDate.of(2020, 01, 25), VehicleType.MOTORCYCLE, "JHMZF1C67BS073397", 15.25f));
+                LocalDate.of(2020, 01, 25), VehicleType.CAR, "JHMZF1C67BS073397", 55.18f));
 
-        vehiclesrents.add(new VehicleRent(LocalDate.of(2020, 01, 15),
-                LocalDate.of(2020, 02, 20), VehicleType.MOTORCYCLE, "11458", 15.25f));
+        vehiclesrents.add(new VehicleRent(LocalDate.of(2020, 01, 17),
+                LocalDate.of(2020, 02, 20), VehicleType.BUS, "1G1ZT548X5F147693", 15.25f));
 
-        vehiclesrents.add(new VehicleRent(LocalDate.of(2020, 01, 15),
-                LocalDate.of(2020, 01, 25), VehicleType.MOTORCYCLE, "11458", 15.25f));
+        vehiclesrents.add(new VehicleRent(LocalDate.of(2020, 07, 05),
+                LocalDate.of(2020, 07, 17), VehicleType.MOTORCYCLE, "2HKRL1863YH598774", 36.74f));
 
 
     }
@@ -203,9 +203,6 @@ public class ExcelWriter {
         // Create a CellStyle with the font
         CellStyle headerCellStyle = workbook.createCellStyle();
         headerCellStyle.setFont(headerFont);
-/*
-        CellStyle driverHeaderCellStyle = workbook.createCellStyle();
-        driverHeaderCellStyle.setFont(headerFont);*/
 
         // Create a Row
         Row headerRow = sheet.createRow(0);
@@ -406,6 +403,12 @@ public class ExcelWriter {
                     .setCellValue(owner.getOfficeNumber());
             row.createCell(12)
                     .setCellValue(owner.getWebsite());
+            for(int i=0;i<owner.getCount();i++){
+//                owner.getVehicleListOwned();
+                row.createCell(13+i)
+                    .setCellValue(owner.getVehicleListOwned().get(i));
+
+            }
         }
         int carRowNum = 1;
         for (Car car : cars) {

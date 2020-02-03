@@ -63,7 +63,7 @@ public class Objects {
 
 
         System.out.println(/*"Vehicle List: "+*/Vehicle.getVehicleList());
-       o1.getOwnedVehicle();
+//       o1.getOwnedVehicle();
 //        System.out.println(/*"Vehicle List: "+*/Vehicle.getType());
         VehicleRent vr1=new VehicleRent(LocalDate.of(2020,01,15),
                 LocalDate.of(2020,01,25),VehicleType.MOTORCYCLE,"11458",15.25f);

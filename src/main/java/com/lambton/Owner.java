@@ -1,21 +1,17 @@
 package com.lambton;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Owner extends Person implements IDisplay {
 
     String companyTitle;
     String officeNumber;
     String website;
-//    String[] vehicleListOwned;
-    Scanner in=new Scanner(System.in);
+    List<String>vehicleListOwned = new ArrayList<>();
+    Scanner in = new Scanner(System.in);
     int count;
-    int vehicleId;
-    String valueFromMap = null;
-     HashMap<Integer,HashMap<String,String>>ownedVehicle=new HashMap<>();
+
+    //     HashMap<Integer,HashMap<String,String>>ownedVehicle=new HashMap<>();
     public Owner(int id, String firstName, String lastName, Gender gender, Date birthDate,
                  String mobileNumber, String emailId, String userName, String password,
                  String companyTitle, String officeNumber, String website, int count) {
@@ -23,43 +19,17 @@ public class Owner extends Person implements IDisplay {
         this.companyTitle = companyTitle;
         this.officeNumber = officeNumber;
         this.website = website;
-        this.count=count;
-       /* this.count=count;
-        for(int i=0;i<count;i++){
-        this.vehicleId=in.nextInt();
-//            this.ownedVehicle.put(id).put(String.valueOf(vehicleId),Vehicle.vehicleList.get(String.valueOf(vehicleId)));
+        this.count = count;
 
-            if(Vehicle.vehicleList.containsKey(vehicleId)){
-                this.valueFromMap = ownedVehicle.get(id).get(Vehicle.vehicleList.get(String.valueOf(vehicleId)));
-            }
-        }
-//        this.ownedVehicle.put(id,Vehicle.vehicleList.get(vehicleId));*/
     }
 
 
 
-    public HashMap<Integer, HashMap<String, String>> getOwnedVehicle() {
-        System.out.println("Owned Vehicle List: ");
-        for (Map.Entry<Integer, HashMap<String,String>> entry : ownedVehicle.entrySet()) {
-            System.out.println(entry.getKey() + " - "  +entry.getValue());
-        }
-        return null;
-    }
 
     public void setOwnedVehicle(HashMap<Integer, HashMap<String, String>> ownedVehicle) {
 //       for(int i=0;i<count;i++)
     }
-/*    public String[] getVehicleListOwned() {
-        int i = 0;
-        for (i = 0; i < vehicleListOwned.length; i++) {
-            System.out.println("Vehicle " + (i + 1) + ": " + vehicleListOwned[i]);
-        }
-        return vehicleListOwned;
-    }
 
-    public void setVehicleListOwned(String[] vehicleListOwned) {
-        this.vehicleListOwned = vehicleListOwned;
-    }*/
 
     public int getCount() {
         return count;
@@ -99,6 +69,27 @@ public class Owner extends Person implements IDisplay {
         return str;
     }
 
+    public List<String> getVehicleListOwned() {
+        String vehicle = "";
+
+        for (int i = 0; i < count; i++) {
+            System.out.println("Enter Vehicle Name: ");
+            try {
+               vehicleListOwned.add(in.nextLine());
+
+            }catch(NullPointerException e){
+                System.out.println("Error");
+            }
+        }
+/*while(in.hasNext()){
+    vehicleListOwned.add(in.next());
+}*/
+        return vehicleListOwned;
+    }
+
+    public void setVehicleListOwned(List<String> vehicleListOwned) {
+        this.vehicleListOwned = vehicleListOwned;
+    }
 
     public void display() {
         System.out.println("Id: " + prefixPlacing());
@@ -108,7 +99,10 @@ public class Owner extends Person implements IDisplay {
         System.out.println("Website: " + getWebsite());
    /*     System.out.println("Vehicles Owned: "+count);
         System.out.println("value "+ valueFromMap );*/
-//        getVehicleListOwned();
+        getVehicleListOwned();
+        for(int i=0;i<count;i++) {
+            System.out.println(vehicleListOwned.get(i));
+        }
         System.out.println();
     }
 }
