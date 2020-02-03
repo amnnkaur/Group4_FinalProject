@@ -7,7 +7,7 @@ enum BusType {
     MiniCoach
 }
 
-public class Bus extends Vehicle implements IDisplay {
+public class Bus extends Vehicle {
 
 
     BusType typeOfBus;

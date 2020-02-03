@@ -2,7 +2,7 @@ package com.lambton;
 
 import java.util.*;
 
-public class Owner extends Person implements IDisplay {
+public class Owner extends Person {
 
     String companyTitle;
     String officeNumber;

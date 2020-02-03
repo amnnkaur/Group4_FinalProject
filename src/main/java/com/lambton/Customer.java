@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Customer extends Person implements IDisplay {
+public class Customer extends Person {
     String address;
     String city;
     static HashMap<String ,String>customerList=new HashMap<>();

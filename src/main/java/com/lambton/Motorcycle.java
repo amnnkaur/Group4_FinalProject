@@ -1,6 +1,6 @@
 package com.lambton;
 
-public class Motorcycle extends Vehicle implements IDisplay {
+public class Motorcycle extends Vehicle {
 
     double topSpeed;
     double milage;

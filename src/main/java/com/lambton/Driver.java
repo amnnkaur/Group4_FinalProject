@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Driver extends Person implements IDisplay {
+public class Driver extends Person {
     long licenceNumber;
     boolean isDrivingHistoryCleared;
     Double salary;

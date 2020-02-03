@@ -11,7 +11,7 @@ enum CarType {
     Sport
 }
 
-public class Car extends Vehicle implements IDisplay {
+public class Car extends Vehicle {
 
     CarType carType;
     String carColor;
