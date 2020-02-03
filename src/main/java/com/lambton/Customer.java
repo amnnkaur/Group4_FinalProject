@@ -40,9 +40,9 @@ public class Customer extends Person {
 
 
     @Override
-    public void printData() {
+    public void display() {
         System.out.println("Id: " + prefixPlacing());
-        super.printData();
+        super.display();
         System.out.println("Address: " + getAddress());
         System.out.println("City: " + getCity());
         System.out.println();

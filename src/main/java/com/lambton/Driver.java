@@ -47,9 +47,9 @@ public class Driver extends Person {
     }
 
     @Override
-    public void printData() {
+    public void display() {
         System.out.println("Id: " + prefixPlacing());
-        super.printData();
+        super.display();
         System.out.println("Licence Number: " + getLicenceNumber());
         System.out.println("Driving History: " + isDrivingHistoryCleared());
         System.out.println("Salary: $" + getSalary());

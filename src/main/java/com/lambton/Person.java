@@ -16,7 +16,7 @@ enum Gender {
     Other
 }
 
-public abstract class Person {
+public abstract class Person implements IDisplay {
     int id;
     String firstName;
     String lastName;
@@ -168,7 +168,7 @@ public abstract class Person {
     }
 
 
-    public void printData() {
+    public void display() {
         System.out.println("First Name: " + getFirstName());
         System.out.println("Last Name: " + getLastName());
         System.out.println("Gender: " + getGender());
