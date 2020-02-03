@@ -2,7 +2,7 @@ package com.lambton;
 
 import java.util.Date;
 
-public class Customer extends Person {
+public class Customer extends Person implements IDisplay {
     String address;
     String city;
     String[] vehicleRent;
@@ -39,7 +39,7 @@ public class Customer extends Person {
     }
 
 
-    @Override
+
     public void display() {
         System.out.println("Id: " + prefixPlacing());
         super.display();

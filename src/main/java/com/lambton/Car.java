@@ -10,7 +10,7 @@ enum CarType {
     Convertible
 }
 
-public class Car extends Vehicle {
+public class Car extends Vehicle implements IDisplay {
 
     CarType carType;
     String carColor;
@@ -44,7 +44,7 @@ public class Car extends Vehicle {
     }
 
 
-    @Override
+
     public void display() {
         super.display();
         System.out.println("Car Type: " + getCarType());

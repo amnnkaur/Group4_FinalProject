@@ -2,7 +2,7 @@ package com.lambton;
 
 import java.util.Date;
 
-public class Driver extends Person {
+public class Driver extends Person implements IDisplay {
     long licenceNumber;
     boolean isDrivingHistoryCleared;
     Double salary;
@@ -46,7 +46,7 @@ public class Driver extends Person {
         this.salary = salary;
     }
 
-    @Override
+
     public void display() {
         System.out.println("Id: " + prefixPlacing());
         super.display();

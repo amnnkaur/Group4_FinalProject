@@ -1,6 +1,6 @@
 package com.lambton;
 
-public class Motorcycle extends Vehicle {
+public class Motorcycle extends Vehicle implements IDisplay {
 
     double topSpeed;
     double milage;
@@ -34,7 +34,7 @@ public class Motorcycle extends Vehicle {
     }
 
 
-    @Override
+
     public void display() {
         super.display();
         System.out.println("Top Speed: " + getTopSpeed()+"km/hr");

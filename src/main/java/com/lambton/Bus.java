@@ -7,7 +7,7 @@ enum BusType {
     MiniCoach
 }
 
-public class Bus extends Vehicle {
+public class Bus extends Vehicle implements IDisplay {
 
 
     BusType typeOfBus;
@@ -55,7 +55,7 @@ public class Bus extends Vehicle {
     }
 
 
-    @Override
+
     public void display() {
         super.display();
         System.out.println("Bus Type: " + getTypeOfBus());
