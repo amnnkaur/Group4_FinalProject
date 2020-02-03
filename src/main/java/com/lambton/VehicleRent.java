@@ -1,10 +1,6 @@
 package com.lambton;
 
-import java.time.Duration;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import java.time.temporal.ChronoUnit;
 
 enum VehicleType {
@@ -25,8 +21,8 @@ public class VehicleRent {
     int customerId;
     String customerName;
 
-    public VehicleRent(int customerId,LocalDate rentStartDate, LocalDate rentEndDate, VehicleType vehicleType, String vehicleId, float noOfKmDrived) {
-        this.customerId=customerId;
+    public VehicleRent(int customerId, LocalDate rentStartDate, LocalDate rentEndDate, VehicleType vehicleType, String vehicleId, float noOfKmDrived) {
+        this.customerId = customerId;
         this.rentStartDate = rentStartDate;
         this.rentEndDate = rentEndDate;
         this.vehicleType = vehicleType;
@@ -37,20 +33,17 @@ public class VehicleRent {
 
     public String getVehicleName() {
         if (Vehicle.vehicleList.containsKey(vehicleId)) {
-//            System.out.println("if block");
             vehicleName = Vehicle.vehicleList.get(String.valueOf(vehicleId));
         } else {
-//            System.out.println("else block");
             vehicleName = "Invalid Vehicle Entry";
         }
         return vehicleName;
     }
-    public String getCustomerName(){
+
+    public String getCustomerName() {
         if (Customer.customerList.containsKey(String.valueOf(customerId))) {
-//            System.out.println("if block");
             customerName = Customer.customerList.get(String.valueOf(customerId));
         } else {
-//            System.out.println("else block");
             customerName = "Invalid Entry";
         }
         return customerName;
@@ -115,10 +108,6 @@ public class VehicleRent {
         }
         return totalFare;
     }
-
-/*    public void setTotalFare(float totalFare) {
-        this.totalFare = totalFare;
-    }*/
 
     public void printData() {
         System.out.println("Rent Start Date: " + getRentStartDate());

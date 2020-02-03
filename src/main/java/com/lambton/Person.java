@@ -132,9 +132,7 @@ public abstract class Person implements IDisplay {
         this.userName = userName;
     }
 
-    /*  public String getOriginalPassword(){
-          return password;
-      }*/
+
     public String getPassword() {
         providedPassword = password;
         salt = PasswordUtils.getSalt(30);
@@ -173,7 +171,7 @@ public abstract class Person implements IDisplay {
         System.out.println("First Name: " + getFirstName());
         System.out.println("Last Name: " + getLastName());
         System.out.println("Gender: " + getGender());
-        System.out.println("Birth Date: " + getBirthDate().getDate()+"/"+months[getBirthDate().getMonth()]+"/"+getBirthDate().getYear());
+        System.out.println("Birth Date: " + getBirthDate().getDate() + "/" + months[getBirthDate().getMonth()] + "/" + getBirthDate().getYear());
         System.out.println("Email: " + getEmailId());
         System.out.println("Mobile Number: " + getMobileNumber());
         System.out.println("Age: " + getAge() + " years");

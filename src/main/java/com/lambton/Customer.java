@@ -7,7 +7,6 @@ import java.util.Map;
 public class Customer extends Person implements IDisplay {
     String address;
     String city;
-    String[] vehicleRent;
     static HashMap<String ,String>customerList=new HashMap<>();
 
     public Customer(int id, String firstName, String lastName, Gender gender, Date birthDate,

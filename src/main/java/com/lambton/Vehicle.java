@@ -32,7 +32,7 @@ public abstract class Vehicle implements IDisplay {
     String vehicleDescription;
     String manufacturerName;
     boolean isSelfDrive;
-    String Driver;
+    String driver;
     boolean isInsured;
     String insuranceNameProvider;
     int noOfSeat;
@@ -40,6 +40,7 @@ public abstract class Vehicle implements IDisplay {
     Type vehicleType;
     int baseRate;
     int ratePerKm;
+    String driverName;
     static HashMap<String, String> vehicleList = new HashMap<>();
 
     public Vehicle(String vehicleIdentificationNumber,
@@ -55,10 +56,10 @@ public abstract class Vehicle implements IDisplay {
         if (isSelfDrive == false) {
             System.out.println("Enter Driver's Name: ");
             Scanner inputDriver = new Scanner(System.in);
-            String driver = inputDriver.nextLine();
-            this.Driver = driver;
+            String driverIn = inputDriver.nextLine();
+            this.driver = driverIn;
         } else {
-            this.Driver = null;
+            this.driver = null;
         }
         this.isInsured = isInsured;
         if (isInsured == true) {
@@ -77,6 +78,19 @@ public abstract class Vehicle implements IDisplay {
 
     }
 
+
+/*
+    public static String getDriverName(){
+        if (Driver.driverList.containsKey(String.valueOf(driver))) {
+//            System.out.println("if block");
+            driverName = Driver.driverList.get(String.valueOf(driver));
+        } else {
+//            System.out.println("else block");
+            driverName = "Invalid Entry";
+        }
+        return driverName;
+    }
+*/
 
     public void setVehicleList(HashMap<String, String> vehicleList) {
 //        prefixer();
@@ -129,11 +143,11 @@ public abstract class Vehicle implements IDisplay {
     }
 
     public String getDriver() {
-        return Driver;
+        return driver;
     }
 
     public void setDriver(String driver) {
-        Driver = driver;
+        this.driver = driver;
     }
 
     public boolean isInsured() {

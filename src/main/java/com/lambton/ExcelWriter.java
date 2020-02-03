@@ -20,14 +20,14 @@ public class ExcelWriter {
     private static String[] driverColumns = {"ID", "First Name", "Last Name", "Gender", "DOB", "Mobile no.", "Age", "Email",
             "User Name", "Password", "Original Password", "Licence Number", "Driving History", "Salary"};
     private static String[] ownerColumns = {"ID", "First Name", "Last Name", "Gender", "DOB", "Mobile no.", "Email",
-            "User Name", "Password", "Original Password", "Company Title", "Office Contact", "Website","Vehicle List"};
+            "User Name", "Password", "Original Password", "Company Title", "Office Contact", "Website", "Vehicle List"};
     private static String[] carColumns = {"VIN", "Vehicle Description", "Manufacturer Name", "isSelfDrive", "Driver", "isInsured",
             "Insurance Name Provider", "No. of seats", "Fuel", "Car Type", "Color", "Base Rate", "Rate per Km"};
     private static String[] motorcycleColumns = {"VIN", "Vehicle Description", "Manufacturer Name", "isSelfDrive", "Driver", "isInsured",
             "Insurance Name Provider", "No. of seats", "Fuel", "Base Rate", "Rate per Km", "Top Speed", "Mileage"};
     private static String[] busColumns = {"VIN", "Vehicle Description", "Manufacturer Name", "isSelfDrive", "Driver", "isInsured",
             "Insurance Name Provider", "No. of seats", "Fuel", "Base Rate", "Rate per Km", "Bus Type", "Accessibility", "Wifi Available"};
-    private static String[] vehicleRentColumns = {"Customer","Rent Start Date", "Rent End Date", "Rented Days", "Vehicle",
+    private static String[] vehicleRentColumns = {"Customer", "Rent Start Date", "Rent End Date", "Rented Days", "Vehicle",
             "Vehicle Type", "No.of Km Drived", "Total Bill"};
     private static List<Customer> customers = new ArrayList<>();
     private static List<Driver> drivers = new ArrayList<>();
@@ -157,13 +157,13 @@ public class ExcelWriter {
         cars.add(new Car("JTHKD5BH8D2168653", "Civic", "Hyundai",
                 true, true, 5, Fuel.Electric, CarType.Sedan, "Blue"));
 
-        vehiclesrents.add(new VehicleRent(11546,LocalDate.of(2020, 01, 15),
+        vehiclesrents.add(new VehicleRent(11546, LocalDate.of(2020, 01, 15),
                 LocalDate.of(2020, 01, 25), VehicleType.CAR, "JHMZF1C67BS073397", 55.18f));
 
-        vehiclesrents.add(new VehicleRent(11563,LocalDate.of(2020, 01, 17),
+        vehiclesrents.add(new VehicleRent(11563, LocalDate.of(2020, 01, 17),
                 LocalDate.of(2020, 02, 20), VehicleType.BUS, "1G1ZT548X5F147693", 15.25f));
 
-        vehiclesrents.add(new VehicleRent(11557,LocalDate.of(2020, 07, 05),
+        vehiclesrents.add(new VehicleRent(11557, LocalDate.of(2020, 07, 05),
                 LocalDate.of(2020, 07, 17), VehicleType.MOTORCYCLE, "2HKRL1863YH598774", 36.74f));
 
 
@@ -257,21 +257,21 @@ public class ExcelWriter {
         driverDateCellStyle.setDataFormat(driverCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
 
         CellStyle ownerDateCellStyle = workbook.createCellStyle();
-        ownerDateCellStyle.setDataFormat(driverCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+        ownerDateCellStyle.setDataFormat(ownerCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
 
         CellStyle carDateCellStyle = workbook.createCellStyle();
-        carDateCellStyle.setDataFormat(driverCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+        carDateCellStyle.setDataFormat(carCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
 
         CellStyle motorcycleDateCellStyle = workbook.createCellStyle();
-        motorcycleDateCellStyle.setDataFormat(driverCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+        motorcycleDateCellStyle.setDataFormat(motorcycleCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
 
         CellStyle busDateCellStyle = workbook.createCellStyle();
-        busDateCellStyle.setDataFormat(driverCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+        busDateCellStyle.setDataFormat(busCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
 
         CellStyle vehiclerentDateCellStyle = workbook.createCellStyle();
-        vehiclerentDateCellStyle.setDataFormat(driverCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+        vehiclerentDateCellStyle.setDataFormat(vehicleRentCreateHelper.createDataFormat().getFormat("dd-MM-yyyy"));
 
-        // Create Other rows and cells with employees data
+        // Create Other rows and cells with customers data
         int rowNum = 1;
         for (Customer customer : customers) {
             Row row = sheet.createRow(rowNum++);
@@ -383,7 +383,6 @@ public class ExcelWriter {
             row.createCell(5)
                     .setCellValue(owner.getMobileNumber());
 
-
             row.createCell(6)
                     .setCellValue(owner.getEmailId());
 
@@ -403,12 +402,7 @@ public class ExcelWriter {
                     .setCellValue(owner.getOfficeNumber());
             row.createCell(12)
                     .setCellValue(owner.getWebsite());
-            for(int i=0;i<owner.getCount();i++){
-//                owner.getVehicleListOwned();
-                row.createCell(13+i)
-                    .setCellValue(owner.getVehicleListOwned().get(i));
 
-            }
         }
         int carRowNum = 1;
         for (Car car : cars) {
@@ -599,7 +593,7 @@ public class ExcelWriter {
 
 
         // Write the output to a file
-        FileOutputStream fileOut = new FileOutputStream("Car_Rental_System.xlsx");
+        FileOutputStream fileOut = new FileOutputStream("Output_vehicle_Rental_System.xlsx");
         workbook.write(fileOut);
         fileOut.close();
 
