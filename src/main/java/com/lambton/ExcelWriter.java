@@ -403,12 +403,12 @@ public class ExcelWriter {
                     .setCellValue(owner.getOfficeNumber());
             row.createCell(12)
                     .setCellValue(owner.getWebsite());
-           /* for(int i=0;i<owner.getCount();i++){
+            for(int i=0;i<owner.getCount();i++){
 //                owner.getVehicleListOwned();
                 row.createCell(13+i)
                     .setCellValue(owner.getVehicleListOwned().get(i));
 
-            }*/
+            }
         }
         int carRowNum = 1;
         for (Car car : cars) {
